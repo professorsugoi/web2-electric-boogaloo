@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: cd frontend
       - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
       - run: echo "🐧 Running on ${{ runner.os }}!"
       - run: echo "🔎 Branch :/ ${{ github.ref }}"
