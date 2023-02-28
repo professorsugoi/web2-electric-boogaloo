@@ -22,7 +22,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: cd frontend
+      - name: Navigate to frontend folder
+        uses: actions/checkout@v2
+        with:
+          path: 'frontend'
       - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
       - run: echo "🐧 Running on ${{ runner.os }}!"
       - run: echo "🔎 Branch :/ ${{ github.ref }}"
