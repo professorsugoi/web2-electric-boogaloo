@@ -1,0 +1,11 @@
+{
+	"name": "web2electricboogaloo",
+	"version": "1.0.0",
+	"description": "Sugoi's personal site on Neocities",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC"
+}
