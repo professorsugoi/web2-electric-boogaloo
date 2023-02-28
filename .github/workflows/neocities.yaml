@@ -2,7 +2,7 @@ name: Deploy to Neocities
 
 defaults: # run in frontend folder by default
   run:
-    working-directory: ${{ github.workspace }}/frontend
+    working-directory: ./frontend
 
 concurrency: # prevent concurrent deploys
   group: deploy-to-neocities
@@ -26,14 +26,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout the repository code
+      uses: actions/checkout@v3
+    - run: echo "🍏 Job status :/ ${{ job.status }}."
+
     - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
     - run: echo "🐧 Running on ${{ runner.os }}!"
     - run: echo "🔎 Branch :/ ${{ github.ref }}"
     - run: echo "🔎 Repository:/ ${{ github.repository }}."
-
-    - name: Checkout the repository code
-      uses: actions/checkout@v3
-    - run: echo "🍏 Job status :/ ${{ job.status }}."
 
     - name: Install Node.js
       uses: actions/setup-node@v3
