@@ -50,8 +50,7 @@ jobs:
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: true # change to false to prevent orphan files from being removed on neocities
-        working-directory: frontend/dist
-        dist_dir: dist
+        dist_dir: frontend/dist
 
     - name: Push changes to GitHub # pushes commit to neocities *and* github
       run: |
