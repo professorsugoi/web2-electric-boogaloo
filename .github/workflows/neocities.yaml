@@ -9,12 +9,9 @@ name: Deploy to Neocities
 
 on:
   workflow_dispatch:
-    branches:
-      - 'main' # change to your branch name
-    paths:
-      - 'frontend/'
     inputs:
-      my-arguement: 'my_value'
+      logLevel:
+        description: 'Log level'
 
 jobs:
   deploy:
