@@ -2,32 +2,32 @@
 
 name: Deploy to Neocities
 
-# on:
-#   push:
-#     branches:
-#       - 'main' # change to your branch name
-#     paths:
-#       - 'frontend/'
+on: [push]
+  branches:
+    - 'main'
 
 on:
   workflow_dispatch:
     branches:
-      - 'main' # change to your branch name
+      - 'main'
     inputs:
       logLevel:
         description: 'Run workflow'
-        paths:
-          - 'frontend/**'
+
+  defaults:
+    run:
+      working-directory: dart_project
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Navigate to frontend folder
-        uses: actions/checkout@v3
-        with:
-          path: 'frontend'
+      steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: json get
+        working-directory: frontend
+
       - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
       - run: echo "🐧 Running on ${{ runner.os }}!"
       - run: echo "🔎 Branch :/ ${{ github.ref }}"
