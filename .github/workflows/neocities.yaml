@@ -2,8 +2,6 @@ name: Deploy to Neocities
 
 on:
   push:
-    branches:
-      - 'main' # change to your branch name
     paths:
       - 'frontend/'
 
