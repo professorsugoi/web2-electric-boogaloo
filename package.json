@@ -2,7 +2,11 @@
 	"name": "web2electricboogaloo",
 	"version": "1.0.0",
 	"description": "Sugoi's personal site on Neocities",
-	"main": "index.js",
+	"workspaces": [
+		"frontend/*",
+		"studio/*"
+	],
+	"main": "frontend/src/index.astro",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
