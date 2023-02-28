@@ -2,8 +2,15 @@ name: Deploy to Neocities
 
 on:
   push:
+    branches:
+      - 'main' # change to your branch name
     paths:
       - 'frontend/'
+
+on:
+  workflow_dispatch:
+    inputs:
+      my-arguement: 'my_value'
 
 jobs:
   deploy:
