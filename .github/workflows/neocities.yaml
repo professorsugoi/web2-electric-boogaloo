@@ -1,65 +1,65 @@
-# name: Deploy to Neocities
+name: Deploy to Neocities
 
-# defaults: # run in frontend folder by default
-#   run:
-#     working-directory: ./frontend
+defaults: # run in frontend folder by default
+  run:
+    working-directory: ./frontend
 
-# concurrency: # prevent concurrent deploys
-#   group: deploy-to-neocities
-#   cancel-in-progress: true
+concurrency: # prevent concurrent deploys
+  group: deploy-to-neocities
+  cancel-in-progress: true
   
-# on:
-#   push:
-#     branches:
-#     - 'main'
+on:
+  push:
+    branches:
+    - 'main'
 
 
-#   workflow_dispatch: # manually trigger workflow
-#     branches:
-#       - 'main'
-#     inputs:
-#       logLevel:
-#         description: 'Run workflow'
+  workflow_dispatch: # manually trigger workflow
+    branches:
+      - 'main'
+    inputs:
+      logLevel:
+        description: 'Run workflow'
 
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-#     steps:
-#     - name: Checkout the repository code
-#       uses: actions/checkout@v3
-#     - run: echo "🍏 Job status :/ ${{ job.status }}."
+    steps:
+    - name: Checkout the repository code
+      uses: actions/checkout@v3
+    - run: echo "🍏 Job status :/ ${{ job.status }}."
 
-#     - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
-#     - run: echo "🐧 Running on ${{ runner.os }}!"
-#     - run: echo "🔎 Branch :/ ${{ github.ref }}"
-#     - run: echo "🔎 Repository:/ ${{ github.repository }}."
+    - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
+    - run: echo "🐧 Running on ${{ runner.os }}!"
+    - run: echo "🔎 Branch :/ ${{ github.ref }}"
+    - run: echo "🔎 Repository:/ ${{ github.repository }}."
 
-#     - name: Install Node.js
-#       uses: actions/setup-node@v3
-#       with:
-#         node-version: '16'
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
 
-#     - name: Install dependencies and build site
-#       run: |
-#         npm install
-#         npm run build
+    - name: Install dependencies and build site
+      run: |
+        npm install
+        npm run build
 
-#     - name: Deploy to Neocities
-#       uses: bcomnes/deploy-to-neocities@v1
-#       with:
-#         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-#         cleanup: true # change to false to prevent orphan files from being removed on neocities
-#         dist_dir: frontend/dist
+    - name: Deploy to Neocities
+      uses: bcomnes/deploy-to-neocities@v1
+      with:
+        api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+        cleanup: true # change to false to prevent orphan files from being removed on neocities
+        dist_dir: frontend/dist
 
-#     - name: Push changes to GitHub # pushes commit to neocities *and* github
-#       run: |
-#         git config user.email "emosock@live.com"
-#         git config user.name "professorsugoi"
-#         git add .
-#         git commit --allow-empty -m "actions: deploy + commit"
-#         git push
+    - name: Push changes to GitHub # pushes commit to neocities *and* github
+      run: |
+        git config user.email "emosock@live.com"
+        git config user.name "professorsugoi"
+        git add .
+        git commit --allow-empty -m "actions: deploy + commit"
+        git push
 
-#     # Make sure github's `actions` bot has permissions to write to your repo
-#     # On your repo page go to Settings > Actions > General
-#     # Scroll down to the "Workflow permissions" and tick the box "Read and Write Permissions"
+    # Make sure github's `actions` bot has permissions to write to your repo
+    # On your repo page go to Settings > Actions > General
+    # Scroll down to the "Workflow permissions" and tick the box "Read and Write Permissions"

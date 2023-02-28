@@ -1,0 +1,32 @@
+---
+// Layout for individual blog posts
+
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+
+import '../frontend/src/styles/global.scss';
+import { getAllBlogPosts } from '../../lib/api';
+import { urlForImage } from '../../lib/urlForImage';
+export async function getStaticPaths() {
+	const allBlogPosts = await getAllBlogPosts();
+
+	return allBlogPosts.map((post) => ({
+		params: { slug: post.slug.current },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+---
+
+<Navbar title='PAGE TITLE' />
+<Layout title='IN PROGRESS'>
+	<html lang='en'>
+		<div class='content-container'>
+			<main>
+				<h2 class='ui-title h2'>{post.title}</h2>
+				<img class='img' src={urlForImage(post.mainImage).url()} />
+			</main>
+		</div>
+	</html>
+</Layout>

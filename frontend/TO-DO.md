@@ -6,8 +6,8 @@
 ## PRIORITY
 
 - getting set up
-  - config cms
-  - site skeleton
+  - ~~config cms~~
+  - ~~site skeleton~~
 - site map
   - art - projects, useful tools
   - code - repos, useful tools
@@ -34,10 +34,3 @@
 - custom cursor
 - is currently online
 - weather
-
-## ACKNOWLEDGEMENT
-
-- site builder - teleporthq.io
-- webflow template - https://webflow.com/made-in-webflow/website/Art-archive\
-- SCSS
--

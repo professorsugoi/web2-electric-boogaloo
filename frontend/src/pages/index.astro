@@ -2,6 +2,11 @@
 import '../styles/global.scss';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+
+import { getFirstBlogPost, getAllBlogPosts } from '../lib/api';
+import { urlForImage } from '../lib/urlForImage';
+const firstPost = await getFirstBlogPost();
+const posts = await getAllBlogPosts();
 ---
 
 <Navbar title='PAGE TITLE' />
@@ -386,21 +391,21 @@ import Navbar from '../components/Navbar.astro';
 							<div class='panel-body'>
 								<div class='panel-col panel-col-txt'>
 									<span>
-										Bacon ipsum dolor amet venison tail meatball, andouille pork
-										beef ribs shankle bresaola frankfurter. Buffalo pig strip
-										steak kielbasa biltong brisket swine drumstick bacon
-										tenderloin shank jowl tail. Sirloin chuck ball tip, jerky
-										bacon frankfurter brisket. Ground round t-bone kielbasa
-										buffalo filet mignon picanha. Pancetta strip steak spare
-										ribs sirloin. Chicken brisket kielbasa t-bone, spare ribs
-										capicola doner frankfurter buffalo shank. Pork belly tail
-										biltong meatloaf, corned beef sirloin ground round
-										porchetta. Picanha fatback tenderloin shankle short loin
-										buffalo t-bone ribeye bresaola. Rump boudin beef, chuck
-										filet mignon sausage prosciutto porchetta. Flank t-bone
-										chuck, short loin jerky drumstick ham hock rump boudin.
-										Pastrami short loin drumstick ground round pork andouille,
-										chicken chislic fatback tongue kielbasa doner picanha.
+										<ul>
+											{
+												posts.map((post) => (
+													<li>
+														<>
+															<img src={urlForImage(post.mainImage).url()} />
+															<br />
+														</>
+														<a href={`/posts/${post.slug.current}`}>
+															{post.title}
+														</a>
+													</li>
+												))
+											}
+										</ul>
 									</span>
 								</div>
 							</div>
@@ -437,19 +442,7 @@ import Navbar from '../components/Navbar.astro';
 							<div class='panel-body'>
 								<div class='panel-col panel-col-txt'>
 									<span>
-										Corned beef picanha pancetta, frankfurter shank cow turkey
-										hamburger meatball shankle shoulder venison jerky. Andouille
-										kielbasa tongue, bresaola leberkas turkey buffalo fatback
-										pig drumstick biltong jowl sausage filet mignon. Filet
-										mignon kevin bacon ground round. Strip steak jerky t-bone
-										doner, porchetta short ribs pancetta flank bacon pork.
-										<br />
-										Corned beef picanha pancetta, frankfurter shank cow turkey hamburger
-										meatball shankle shoulder venison jerky. Andouille kielbasa tongue,
-										bresaola leberkas turkey buffalo fatback pig drumstick biltong
-										jowl sausage filet mignon. Filet mignon kevin bacon ground round.
-										Strip steak jerky t-bone doner, porchetta short ribs pancetta
-										flank bacon pork.
+										{JSON.stringify(firstPost)}
 									</span>
 								</div>
 							</div>
