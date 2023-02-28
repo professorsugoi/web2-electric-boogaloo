@@ -35,23 +35,16 @@ jobs:
     - run: echo "🔎 Branch :/ ${{ github.ref }}"
     - run: echo "🔎 Repository:/ ${{ github.repository }}."
 
-    - name: Checkout the repository code
-      uses: actions/checkout@v3
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '16'
 
-    - name: Checkout the repository code
-      uses: actions/checkout@v3
     - name: Install dependencies and build site
       run: |
         npm install
         npm run build
 
-    - name: Checkout the repository code
-      uses: actions/checkout@v3
-    - run: echo "🍏 Job status :/ ${{ job.status }}."
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
