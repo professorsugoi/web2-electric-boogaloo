@@ -1,3 +1,5 @@
+# not building and deploying the frontend folder correctly
+
 name: Deploy to Neocities
 
 # on:
@@ -13,7 +15,7 @@ on:
       - 'main' # change to your branch name
     inputs:
       logLevel:
-        description: 'Log level'
+        description: 'Run workflow'
         paths:
           - 'frontend/**'
 
