@@ -2,7 +2,7 @@ name: Deploy to Neocities
 
 defaults: # run in frontend folder by default
   run:
-    working-directory: frontend
+    working-directory: ./frontend
 
 concurrency: # prevent concurrent deploys
   group: deploy-to-neocities
