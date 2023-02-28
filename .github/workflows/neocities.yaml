@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Navigate to frontend folder
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: 'frontend'
       - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
