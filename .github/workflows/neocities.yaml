@@ -12,6 +12,8 @@ on:
     inputs:
       logLevel:
         description: 'Log level'
+        paths:
+          - 'frontend/**'
 
 jobs:
   deploy:
