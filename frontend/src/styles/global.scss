@@ -53,8 +53,9 @@ main {
 }
 
 .content-container {
-	height: 100%;
 	padding: 75px 15px 15px 75px;
+	padding-left: 400px;
+	padding-right: 200px;
 	z-index: 80;
 	position: relative;
 }
@@ -167,57 +168,54 @@ main {
 		}
 	}
 }
+// top & mid section =================================================================
+.row-top, .col-container {
+	margin: 0;
+	padding: 0;
+  }
+  
 
 // top section =================================================================
 .row-top {
-	flex: 1;
-	height: 25%;
-	display: flex;
-	padding-left: 200px;
-	padding-right: 200px;
+  display: flex;
+  height: 18rem;
 }
 
 .panel.w75 {
-	//wide panel
-	flex: 0 auto;
-	width: 75%;
+  flex: 0 0 75%;
+}
+
+.panel.w25 {
+  flex: 0 0 25%;
 }
 
 // mid section =================================================================
 .col-container {
-	flex: 1;
 	display: flex;
-	padding-left: 200px;
-	padding-right: 200px;
 	flex-direction: row;
 }
 
 .col-right {
-	//right panels
 	flex: 1;
-	height: 100%;
 	display: flex;
 	flex-direction: column;
-}
+  }
 
 .col-left {
 	//left panels
 	flex: 0 auto;
-	width: 25%;
-	height: 75%;
-	display: flex;
+	width: 25rem;
 	flex-direction: column;
 }
 
 .panel.h25 {
-	//small top panel
-	height: 25%;
+  flex: 0 0 100%;
 }
 
 // general styling for panels ===================================================
 .panel-container {
-	flex: 0 auto;
-	height: 100%;
+	flex: 0.5 0 auto;
+	display: flex;
 	padding: 15px;
 
 	.panel {
