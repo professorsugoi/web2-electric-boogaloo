@@ -1,7 +1,7 @@
 ---
 // Layout for individual blog posts
 
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../layouts/BlogPage.astro';
 import Navbar from '../../components/Navbar.astro';
 
 import '../frontend/src/styles/global.scss';
@@ -20,12 +20,12 @@ const { post } = Astro.props;
 ---
 
 <Navbar title='PAGE TITLE' />
-<Layout title='IN PROGRESS'>
+<Layout>
 	<html lang='en'>
 		<div class='content-container'>
 			<main>
 				<h2 class='ui-title h2'>{post.title}</h2>
-				<img class='img' src={urlForImage(post.mainImage).url()} />
+				<!-- <img class='img' src={urlForImage(post.mainImage).url()} /> -->
 			</main>
 		</div>
 	</html>

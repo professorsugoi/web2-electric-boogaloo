@@ -1,12 +1,11 @@
 ---
 import '../styles/global.scss';
 import '../styles/normalize.css';
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Base.astro';
 import Navbar from '../components/Navbar.astro';
 
-import { getFirstBlogPost, getAllBlogPosts } from '../lib/api';
+import { getAllBlogPosts } from '../lib/api';
 import { urlForImage } from '../lib/urlForImage';
-const firstPost = await getFirstBlogPost();
 const posts = await getAllBlogPosts();
 ---
 
@@ -40,15 +39,11 @@ const posts = await getAllBlogPosts();
 					</div>
 					<div class='panel-body'>
 						<span
-							>Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industry's standard dummy text
-							ever since the 1500s, when an unknown printer took a galley of
-							type and scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially unchanged. It was
-							popularised in the 1960s with the release of Letraset sheets
-							containing Lorem Ipsum passages, and more recently with desktop
-							publishing software like Aldus PageMaker including versions of
+							>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+							standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+							type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+							remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+							Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
 							Lorem Ipsum.</span
 						>
 					</div>
@@ -77,15 +72,11 @@ const posts = await getAllBlogPosts();
 					<div class='panel-body'>
 						<br />
 						<span
-							>Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industry's standard dummy text
-							ever since the 1500s, when an unknown printer took a galley of
-							type and scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially unchanged. It was
-							popularised in the 1960s with the release of Letraset sheets
-							containing Lorem Ipsum passages, and more recently with desktop
-							publishing software like Aldus PageMaker including versions of
+							>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+							standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+							type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+							remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+							Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
 							Lorem Ipsum.</span
 						>
 					</div>
@@ -212,16 +203,12 @@ const posts = await getAllBlogPosts();
 							</div>
 							<br />
 							<span
-								>Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry. Lorem Ipsum has been the industry's
-								standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type
-								specimen book. It has survived not only five centuries, but also
-								the leap into electronic typesetting, remaining essentially
-								unchanged. It was popularised in the 1960s with the release of
-								Letraset sheets containing Lorem Ipsum passages, and more
-								recently with desktop publishing software like Aldus PageMaker
-								including versions of Lorem Ipsum.</span
+								>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+								standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+								type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+								remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+								Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+								of Lorem Ipsum.</span
 							>
 						</div>
 					</div>
@@ -321,18 +308,14 @@ const posts = await getAllBlogPosts();
 						</div>
 						<div class='panel-body'>
 							<div class='panel-col panel-col-txt'>
+								<!-- <img src={urlForImage(post.mainImage).url()} /> -->
 								<span>
 									<ul>
 										{
 											posts.map((post) => (
 												<li>
-													<>
-														<img src={urlForImage(post.mainImage).url()} />
-														<br />
-													</>
-													<a href={`/posts/${post.slug.current}`}>
-														{post.title}
-													</a>
+													<br />
+													<a href={`/posts/${post.slug.current}`}>{post.title}</a>
 												</li>
 											))
 										}
@@ -372,9 +355,7 @@ const posts = await getAllBlogPosts();
 						</div>
 						<div class='panel-body'>
 							<div class='panel-col panel-col-txt'>
-								<span>
-									{JSON.stringify(firstPost)}
-								</span>
+								<span> text text text text text</span>
 							</div>
 						</div>
 					</div>

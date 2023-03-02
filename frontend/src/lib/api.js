@@ -6,12 +6,6 @@ export async function getSiteSettings() {
 	return siteSettings;
 }
 
-export async function getFirstBlogPost() {
-	const query = groq`*[_type == 'post']`;
-	const firstPost = await useSanityClient().fetch(query);
-	return firstPost;
-}
-
 export async function getAllBlogPosts() {
 	const client = useSanityClient()
 	const query = groq`*[_type == 'post']`
