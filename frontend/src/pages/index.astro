@@ -3,6 +3,7 @@ import '../styles/global.scss';
 import '../styles/normalize.css';
 import Layout from '../layouts/Base.astro';
 import Navbar from '../components/Navbar.astro';
+// import PortableText from '../components/PortableText.astro';
 
 import { getAllBlogPosts } from '../lib/api';
 import { urlForImage } from '../lib/urlForImage';
@@ -320,6 +321,18 @@ const posts = await getAllBlogPosts();
 											))
 										}
 									</ul>
+
+
+									<!-- <picture>
+										<source
+										  srcset={urlForImage(posts.mainImage).width(600).format('webp').url()}
+										  type="image/webp"
+										/>
+										<img src={urlForImage(posts.mainImage).width(600).url()} />
+									  </picture>
+									  <PortableText portableText={posts.body} /> -->
+
+
 								</span>
 							</div>
 						</div>

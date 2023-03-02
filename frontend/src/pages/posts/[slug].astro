@@ -3,10 +3,10 @@
 
 import Layout from '../../layouts/BlogPage.astro';
 import Navbar from '../../components/Navbar.astro';
-
 import '../frontend/src/styles/global.scss';
 import { getAllBlogPosts } from '../../lib/api';
 import { urlForImage } from '../../lib/urlForImage';
+
 export async function getStaticPaths() {
 	const allBlogPosts = await getAllBlogPosts();
 
@@ -25,7 +25,7 @@ const { post } = Astro.props;
 		<div class='content-container'>
 			<main>
 				<h2 class='ui-title h2'>{post.title}</h2>
-				<!-- <img class='img' src={urlForImage(post.mainImage).url()} /> -->
+				<!-- <img class='img' src={getSanityImageURL(post.mainImage).url()} /> -->
 			</main>
 		</div>
 	</html>
