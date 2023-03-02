@@ -52,14 +52,6 @@ main {
 	background-color: $secondary;
 }
 
-.content-container {
-	padding: 75px 15px 15px 75px;
-	padding-left: 400px;
-	padding-right: 200px;
-	z-index: 80;
-	position: relative;
-}
-
 // navbar module =================================================================
 
 // logo block
@@ -169,11 +161,13 @@ main {
 	}
 }
 // top & mid section =================================================================
-.row-top, .col-container {
-	margin: 0;
-	padding: 0;
-  }
-  
+.content-container {
+	padding: 75px 0;
+	padding-left: 25%;
+	padding-right: 10%;
+	z-index: 80;
+	position: relative;
+}
 
 // top section =================================================================
 .row-top {
@@ -181,12 +175,12 @@ main {
   height: 18rem;
 }
 
-.panel.w75 {
-  flex: 0 0 75%;
+.panel-w75 {
+  flex-basis: 75%;
 }
 
-.panel.w25 {
-  flex: 0 0 25%;
+.panel-w25 {
+  flex-basis: 25%;
 }
 
 // mid section =================================================================
@@ -208,21 +202,18 @@ main {
 	flex-direction: column;
 }
 
-.panel.h25 {
-  flex: 0 0 100%;
+.panel-h25 {
+  height: 17rem;
 }
 
 // general styling for panels ===================================================
 .panel-container {
-	flex: 0.5 0 auto;
-	display: flex;
 	padding: 15px;
 
 	.panel {
 		width: 100%;
 		height: 100%;
 		display: flex;
-		transition: box-shadow 200ms ease;
 		border-color: $text;
 		border-style: solid;
 		border-width: 1px;
@@ -235,6 +226,7 @@ main {
 			display: flex;
 			overflow: scroll;
 			flex-direction: column;
+			overflow-wrap: break-word;
 		}
 	}
 }
@@ -346,7 +338,7 @@ main {
 .panel-row {
 	color: $text;
 	cursor: pointer;
-	height: 60px;
+	height: 4rem;
 	display: flex;
 	border-bottom: 1px solid $secondary;
 	text-decoration: none;
@@ -357,7 +349,7 @@ main {
 	background-color: $text;
 }
 
-.panel-row.h30 {
+.panel-row-h30 {
 	height: 30px;
 }
 
@@ -382,7 +374,7 @@ main {
 	justify-content: flex-start;
 }
 
-.panel-col.w25 {
+.panel-col-w25 {
 	flex: 0 auto;
 	width: 25%;
 }
@@ -395,7 +387,7 @@ main {
 	line-height: 16px;
 }
 
-.panel-col.w40 {
+.panel-col-w40 {
 	flex: 0 auto;
 	width: 40%;
 }
