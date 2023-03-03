@@ -7,16 +7,33 @@ import '../frontend/src/styles/global.scss';
 import { getAllBlogPosts } from '../../lib/api';
 import { urlForImage } from '../../lib/urlForImage';
 
-export async function getStaticPaths() {
-	const allBlogPosts = await getAllBlogPosts();
+// Gets urls from blog posts (backup)
+// export async function getStaticPaths() {
+// 	const allBlogPosts = await getAllBlogPosts();
 
-	return allBlogPosts.map((post) => ({
-		params: { slug: post.slug.current },
-		props: { post },
-	}));
+// 	return allBlogPosts.map((post) => ({
+// 		params: { slug: post.slug.current },
+// 		props: { post },
+// 	}));
+// }
+
+// const { post } = Astro.props;
+
+import { useSanityClient } from 'astro-sanity';
+
+export async function getStaticPaths() {
+	const posts = await useSanityClient().fetch(`*[_type == "post"]`);
+
+  return posts.map(({ slug, title }) => {
+    return {
+      params: { slug: slug.current },
+      props: { title },
+    };
+  });
 }
 
-const { post } = Astro.props;
+const { slug } = Astro.params;
+const { title } = Astro.props;
 ---
 
 <Navbar title='PAGE TITLE' />
@@ -24,7 +41,7 @@ const { post } = Astro.props;
 	<html lang='en'>
 		<div class='content-container'>
 			<main>
-				<h2 class='ui-title h2'>{post.title}</h2>
+				<h2 class='ui-title h2'>{title}</h2>
 				<!-- <img class='img' src={getSanityImageURL(post.mainImage).url()} /> -->
 			</main>
 		</div>

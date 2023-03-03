@@ -1,7 +1,7 @@
 ---
-import { sanityPortableText } from '../lib/portableText'
+import { sanityPortableText } from '../lib/portableText';
 
-const {portableText} = Astro.props;
+const { portableText } = Astro.props;
 ---
 
 <Fragment set:html={sanityPortableText(portableText)} />

@@ -3,10 +3,11 @@ import '../styles/global.scss';
 import '../styles/normalize.css';
 import Layout from '../layouts/Base.astro';
 import Navbar from '../components/Navbar.astro';
-// import PortableText from '../components/PortableText.astro';
 
 import { getAllBlogPosts } from '../lib/api';
+import PortableText from '../components/PortableText.astro';
 import { urlForImage } from '../lib/urlForImage';
+
 const posts = await getAllBlogPosts();
 ---
 
@@ -309,30 +310,15 @@ const posts = await getAllBlogPosts();
 						</div>
 						<div class='panel-body'>
 							<div class='panel-col panel-col-txt'>
-								<!-- <img src={urlForImage(post.mainImage).url()} /> -->
 								<span>
-									<ul>
-										{
-											posts.map((post) => (
-												<li>
-													<br />
-													<a href={`/posts/${post.slug.current}`}>{post.title}</a>
-												</li>
-											))
-										}
-									</ul>
-
-
-									<!-- <picture>
-										<source
-										  srcset={urlForImage(posts.mainImage).width(600).format('webp').url()}
-										  type="image/webp"
-										/>
-										<img src={urlForImage(posts.mainImage).width(600).url()} />
-									  </picture>
-									  <PortableText portableText={posts.body} /> -->
-
-
+									<!-- <h1>{data.title}</h1>
+    								<picture>
+    								  <source
+    								    srcset={urlForImage(data.mainImage).width(600).format('webp').url()}
+    								    type="image/webp" />
+    								  <img src={urlForImage(data.mainImage).width(600).url()} />
+    								</picture>
+    								<PortableText portableText={data.body} /> -->
 								</span>
 							</div>
 						</div>
