@@ -5,6 +5,7 @@ import sanity from 'astro-sanity';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://profsugoi.neocities.org/',
   integrations: [
     sitemap(),
     sanity({
