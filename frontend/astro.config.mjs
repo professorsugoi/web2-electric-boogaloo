@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 import sanity from 'astro-sanity';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sanity({
+  integrations: [
+    sitemap(),
+    sanity({
     projectId: 'cj8je4w1',
     dataset: 'production',
     apiVersion: 'v2021-03-25',

@@ -1,6 +1,9 @@
 ---
+// import { getSiteSettings } from '../lib/api';
+import settings from '../data/settings.js';
+
+import '../styles/normalize.css';
 import '../styles/global.scss';
-import { getSiteSettings } from '../lib/api';
 
 export interface Props {
 	title?: string;
@@ -9,7 +12,7 @@ export interface Props {
 	image?: string;
 }
 
-const settings = await getSiteSettings();
+// const settings = await getSiteSettings();
 
 const title = Astro.props.title || settings.title;
 const description = Astro.props.description || settings.description;
@@ -18,10 +21,7 @@ const canonicalURL = Astro.props.canonicalURL || settings.url;
 ---
 
 <meta charset='utf-8' />
-<meta
-	name='viewport'
-	content='width=device-width, initial-scale=1, viewport-fit=cover'
-/>
+<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover' />
 
 <!-- Primary Meta Tags -->
 <title>{title || settings.title}</title>
