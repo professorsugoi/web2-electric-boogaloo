@@ -42,8 +42,6 @@
 
 - https://getbem.com/
 
-% bars for skills
-likes dislikes
 zodiac sign
 
 fake world: weather, time, moon phase
@@ -55,3 +53,7 @@ pageviews, articles
 profile warnings
 
 commission page
+
+---
+
+images wont load on neocities for some reason
