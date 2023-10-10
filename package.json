@@ -3,8 +3,7 @@
 	"version": "1.0.0",
 	"description": "Sugoi's personal site on Neocities",
 	"workspaces": [
-		"frontend/*",
-		"studio/*"
+		"frontend_/*"
 	],
 	"main": "frontend/src/index.astro",
 	"scripts": {
