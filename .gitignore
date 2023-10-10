@@ -3,6 +3,8 @@ dist/
 
 # generated types
 .astro/
+.vscode
+.codesandbox
 snippets/
 
 # dependencies
