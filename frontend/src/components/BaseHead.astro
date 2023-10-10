@@ -1,46 +1,48 @@
 ---
-// import { getSiteSettings } from '../lib/api';
-import settings from '../data/settings.js';
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+import '../styles/base.css';
 
-import '../styles/normalize.css';
-import '../styles/global.scss';
-
-export interface Props {
-	title?: string;
-	description?: string;
-	canonicalURL?: URL | string;
+interface Props {
+	title: string;
+	description: string;
 	image?: string;
 }
 
-// const settings = await getSiteSettings();
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const title = Astro.props.title || settings.title;
-const description = Astro.props.description || settings.description;
-const canonicalURL = Astro.props.canonicalURL || settings.url;
-// const image = new URL(Astro.props.image || './social.png', Astro.site);
+const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 ---
 
+<!-- Global Metadata -->
 <meta charset='utf-8' />
-<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover' />
+<meta name='viewport' content='width=device-width,initial-scale=1' />
+<link rel='icon' type='image/svg+xml' href='/favicon.ico' />
+<meta name='generator' content={Astro.generator} />
+
+<!-- Font preloads -->
+<link rel='preload' href='/fonts/atkinson-regular.woff' as='font' type='font/woff' crossorigin />
+<link rel='preload' href='/fonts/atkinson-bold.woff' as='font' type='font/woff' crossorigin />
+
+<!-- Canonical URL -->
+<link rel='canonical' href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title || settings.title}</title>
-<meta name='title' content={title || settings.title} />
-<meta name='description' content={description || settings.description} />
-
-<!-- Canonical -->
-<link rel='canonical' href={canonicalURL} />
+<title>{title}</title>
+<meta name='title' content={title} />
+<meta name='description' content={description} />
 
 <!-- Open Graph / Facebook -->
 <meta property='og:type' content='website' />
-<meta property='og:url' content={canonicalURL} />
+<meta property='og:url' content={Astro.url} />
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
-<!-- <meta property='og:image' content={image} /> -->
+<meta property='og:image' content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
 <meta property='twitter:card' content='summary_large_image' />
-<meta property='twitter:url' content={canonicalURL} />
+<meta property='twitter:url' content={Astro.url} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
-<!-- <meta property='twitter:image' content={image} /> -->
+<meta property='twitter:image' content={new URL(image, Astro.url)} />

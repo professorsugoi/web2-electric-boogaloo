@@ -1,0 +1,46 @@
+/* for blog page */
+
+.contentwrapper {
+	display: grid;
+	gap: 10px;
+	/* Adjust the column width as per your requirement. For instance, 30% for left and 70% for center */
+	grid-template-columns: 30% 70%;
+}
+
+.sidebarleft {
+	grid-column: 1;
+}
+
+.centercol {
+	grid-column: 2;
+}
+
+.centercol > div,
+.sidebarleft > div {
+	margin-bottom: 10px;
+}
+
+/* <div class='contentwrapper'>
+	<!-- LEFT SIDEBAR -->
+	<div class='sidebarleft'>
+		<div class='content'>
+			BOX 1
+		</div>
+		<div class='content'>
+			BOX 2
+		</div>
+		<div class='content'>
+			BOX 3
+		</div>
+	</div>
+
+	<!-- CENTER COLUMN -->
+	<div class='centercol'>
+		<div class='content'>
+			BOX 4
+		</div>
+		<div class='content'>
+			BOX 5
+		</div>
+	</div>
+</div> */
