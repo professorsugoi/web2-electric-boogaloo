@@ -45,7 +45,6 @@
 zodiac sign
 
 fake world: weather, time, moon phase
-online/offline
 
 users on page
 pageviews, articles
@@ -57,3 +56,4 @@ commission page
 ---
 
 images wont load on neocities for some reason
+adblock detected: need it off to run site properly

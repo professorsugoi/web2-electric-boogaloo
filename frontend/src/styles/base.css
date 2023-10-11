@@ -1,52 +1,17 @@
 /* apply a natural box layout model to all elements */
-*,
-*:before,
-*:after {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-@font-face {
-	font-family: 'ChicagoFLF';
-	src: url('/fonts/ChicagoFLF.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
 :root {
 	--button-box-shadow: inset -1px -1px 0px 0px #777, inset -2px -2px 0px 0px #aaa, inset 1px 1px 0px 0px #ddd,
 		inset 2px 2px 0px 0px #fff;
 	--button-hover-bezel: 0 0 0 1px #aaa, 0 0 0 2px #ddd, 0 0 0 3px #000;
-}
-html,
-body {
-	/* -moz-user-select: none;
-	-webkit-user-select: none; */
-	background-image: url('/public/spacebg.png');
-	background-repeat: repeat;
-	margin: 0;
-	height: 100%;
-	font-family: 'ChicagoFLF', 'Times New Roman', 'Georgia', serif;
-	font-size: 12px;
-	font-weight: normal;
-	overflow: auto;
 }
 button {
 	font-family: inherit;
 	font-size: inherit;
 	color: inherit;
 }
-a {
-	color: #000;
-}
-:focus {
-	outline: none;
-}
-::-moz-focus-inner {
-	border: 0;
-}
 
 /* Window layout */
-.contentwrapper {
+/* .content-wrapper {
 	display: grid;
 	gap: 10px;
 	grid-template-columns: 20% 1fr 18%;
@@ -66,7 +31,7 @@ a {
 .sidebarleft > div,
 .sidebarright > div {
 	margin-bottom: 10px;
-}
+} */
 
 /* Window Styling */
 .content {
@@ -74,10 +39,13 @@ a {
 	z-index: 2;
 	font-size: 12px;
 	font-weight: normal;
-	margin: auto 0;
+	margin-bottom: 10px;
 	border: 1px solid #111;
 	background: #ccc;
 	box-shadow: 1px 2px #111, inset 1px 1px 0px 0px #fff, inset -1px -1px 0px 0px #999;
+}
+.inner {
+	padding: 0.2em 0.5em 0.5em 0;
 }
 .content .inner {
 	margin: 2px 4px 4px 4px;
@@ -98,12 +66,6 @@ a {
 	text-align: center;
 	margin: 1em 0;
 }
-.content ul {
-	list-style-type: none;
-	margin: 2px 0 1.5em 0;
-	padding: 0 1em 0 2em;
-	font-size: 12px;
-}
 .windowshade-box-inner {
 	margin-top: 3px;
 	height: 3px;
@@ -114,7 +76,7 @@ a {
 	height: 22px;
 	background-color: #dedede;
 	display: inline-block;
-	margin-bottom: 7px;
+	margin-bottom: 1em;
 	margin-left: 14px;
 	border-radius: 3px;
 	border: 1px solid #000;
@@ -128,17 +90,4 @@ a {
 	background-color: #666;
 	box-shadow: var(--button-hover-bezel), inset -1px -1px 0px 0px #888, inset -2px -2px 0px 0px #777, inset 1px 1px 0px 0px #444,
 		inset 2px 2px 0px 0px #555;
-}
-
-/* Media query for larger screens (e.g., tablets and desktops) */
-@media (max-width: 768px) {
-	.contentwrapper {
-		grid-template-columns: 1fr; /* Single column layout */
-	}
-
-	.sidebarleft,
-	.centercol,
-	.sidebarright {
-		grid-column: 1; /* All content goes to the same single column */
-	}
 }

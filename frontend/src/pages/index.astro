@@ -1,97 +1,76 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import ThreeColumn from '../layouts/ThreeColumn.astro';
 ---
 
-<!doctype html>
-<html lang='en'>
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<div class='contentwrapper'>
-				<!-- LEFT SIDEBAR -->
-				<div class='sidebarleft'>
-					<div class='content'>
-						<h1 class='title'>BOX 1</h1>
-						<div class='inner'>
-							<div class='icon'><img src='bomb.png' /></div>
-							<ul>
-								<p>Under construction!</p>
-								<button class='command_button'>Button</button>
-							</ul>
-						</div>
-					</div>
-					<div class='content'>
-						<h1 class='title'>BOX 2</h1>
-						<div class='inner'>
-							<div class='icon'><img src='bomb.png' /></div>
-							<ul>
-								<p>Under construction!</p>
-								<button class='command_button'>Button</button>
-							</ul>
-						</div>
-					</div>
-					<div class='content'>
-						<h1 class='title'>BOX 3</h1>
-						<div class='inner'>
-							<div class='icon'><img src='bomb.png' /></div>
-							<ul>
-								<p>Under construction!</p>
-								<button class='command_button'>Button</button>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- CENTER COLUMN -->
-				<div class='centercol'>
-					<div class='content'>
-						<h1 class='title'>BOX 4</h1>
-						<div class='inner'>
-							<div class='icon'><img src='bomb.png' /></div>
-							<ul>
-								<p>Under construction!</p>
-								<button class='command_button'>Button</button>
-							</ul>
-						</div>
-					</div>
-					<div class='content'>
-						<h1 class='title'>BOX 5</h1>
-						<div class='inner'>
-							<div class='icon'><img src='bomb.png' /></div>
-							<ul>
-								<p>Here are a few ideas on how to get started with the template:</p>
-								<ul>
-									<li>Edit this page in <code>src/pages/index.astro</code></li>
-									<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-									<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-									<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-									<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-								</ul>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- RIGHT SIDEBAR -->
-				<div class='sidebarright'>
-					<div class='content'>
-						<h1 class='title'>BOX 6</h1>
-						<div class='inner'>
-							<ul>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-									standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
-								</p>
-							</ul>
-						</div>
-					</div>
-				</div>
+<ThreeColumn>
+	<!-- LEFT SIDEBAR -->
+	<div class='sidebarleft'>
+		<div class='content'>
+			<h1 class='title'>BOX 1</h1>
+			<div class='inner'>
+				<div class='icon'><img src='monidle.png' /></div>
+				<p>Under construction!</p>
+				<button class='command_button'>Button</button>
 			</div>
-		</main>
-	</body>
-</html>
+		</div>
+		<div class='content'>
+			<h1 class='title'>BOX 2</h1>
+			<div class='inner'>
+				<div class='icon'><img src='monidle.png' /></div>
+
+				<p>Under construction!</p>
+				<button class='command_button'>Button</button>
+			</div>
+		</div>
+		<div class='content'>
+			<h1 class='title'>BOX 3</h1>
+			<div class='inner'>
+				<div class='icon'><img src='monidle.png' /></div>
+
+				<p>Under construction!</p>
+				<button class='command_button'>Button</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- CENTER COLUMN -->
+	<div class='centercol'>
+		<div class='content'>
+			<h1 class='title'>BOX 4</h1>
+			<div class='inner'>
+				<div class='icon'><img src='monidle.png' /></div>
+
+				<p>Under construction!</p>
+				<button class='command_button'>Button</button>
+			</div>
+		</div>
+		<div class='content'>
+			<h1 class='title'>BOX 5</h1>
+			<div class='inner'>
+				<div class='icon'><img src='monidle.png' /></div>
+
+				<p>Here are a few ideas on how to get started with the template:</p>
+				<ul>
+					<li>Edit this page in <code>src/pages/index.astro</code></li>
+					<li>Edit the site header items in <code>src/components/Header.astro</code></li>
+					<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
+					<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
+					<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- RIGHT SIDEBAR -->
+	<div class='sidebarright'>
+		<div class='content'>
+			<h1 class='title'>BOX 6</h1>
+			<div class='inner'>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+					dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+				</p>
+			</div>
+		</div>
+	</div>
+</ThreeColumn>

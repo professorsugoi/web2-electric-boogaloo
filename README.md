@@ -17,5 +17,6 @@ The meaty stuff
 Templates and tools used
 
 - [Deploy-Astro-Neocities](https://github.com/professorsugoi/Deploy-Astro-Neocities) - github actions
-- [New Dawn](https://github.com/npjg/classic.css) - css made mimicking mac os 8.1
+- [New Dawn](https://github.com/npjg/classic.css) - css framework
 - [Space BG](https://deep-fold.itch.io/space-background-generator) - by deep-fold on itch.io
+- [Mon Sprite](https://opengameart.org/content/cute-monster-sprite-sheet) - by dogchicken
