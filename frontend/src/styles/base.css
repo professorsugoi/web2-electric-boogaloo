@@ -9,7 +9,7 @@
 
 @font-face {
 	font-family: 'ChicagoFLF';
-	src: url('fonts/ChicagoFLF.ttf') format('truetype'); /* Safari, Android, iOS */
+	src: url('/fonts/ChicagoFLF.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 :root {
@@ -21,7 +21,7 @@ html,
 body {
 	/* -moz-user-select: none;
 	-webkit-user-select: none; */
-	background-image: url('src/img/deep-fold.tich.io_Space Background.png');
+	background-image: url('/public/spacebg.png');
 	background-repeat: repeat;
 	margin: 0;
 	height: 100%;
