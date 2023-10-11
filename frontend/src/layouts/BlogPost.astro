@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
 import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
@@ -13,18 +14,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
 			.hero-image {
-				width: 100%;
+				width: auto;
+				margin: 2em;
 			}
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
-				border-radius: 12px;
 				box-shadow: var(--box-shadow);
 			}
 			.prose {
@@ -54,28 +50,32 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</head>
 
 	<body>
-		<Header />
+		<Header title={SITE_TITLE} />
 		<main>
 			<article>
-				<div class='hero-image'>
-					{heroImage && <img width={1020} height={510} src={heroImage} alt='' />}
-				</div>
-				<div class='prose'>
-					<div class='title'>
-						<div class='date'>
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class='last-updated-on'>
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+				<div class='content'>
+					<h1 class='title'><FormattedDate date={pubDate} /></h1>
+					<div class='inner'>
+						<div class='hero-image'>
+							{heroImage && <img width={720} height={500} src={heroImage} alt='' />}
 						</div>
-						<h1>{title}</h1>
-						<hr />
+						<div class='prose'>
+							<div class='title'>
+								<div class='date'>
+									{
+										updatedDate && (
+											<div class='last-updated-on'>
+												Last updated on <FormattedDate date={updatedDate} />
+											</div>
+										)
+									}
+								</div>
+								<h1>{title}</h1>
+								<hr />
+							</div>
+							<slot />
+						</div>
 					</div>
-					<slot />
 				</div>
 			</article>
 		</main>
