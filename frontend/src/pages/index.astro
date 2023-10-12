@@ -1,64 +1,67 @@
 ---
-import ThreeColumn from '../layouts/ThreeColumn.astro';
+import Default from '../layouts/Default.astro';
+import '../styles/three-column.css';
 ---
 
-<ThreeColumn>
-	<!-- LEFT SIDEBAR -->
-	<div class='sidebarleft'>
-		<div class='content'>
-			<h1 class='title'>BOX 1</h1>
-			<div class='inner'>
-				<p>Under construction!</p>
-				<button class='command_button'>Button</button>
+<Default pageTitle='Home'>
+	<main class='three-col-wrapper'>
+		<!-- LEFT SIDEBAR -->
+		<div class='sidebarleft'>
+			<div class='content'>
+				<h1 class='title'>BOX 1</h1>
+				<div class='inner'>
+					<p>Under construction!</p>
+					<button class='command_button'>Button</button>
+				</div>
+			</div>
+			<div class='content'>
+				<h1 class='title'>BOX 2</h1>
+				<div class='inner'>
+					<p>Under construction!</p>
+				</div>
+			</div>
+			<div class='content'>
+				<h1 class='title'>BOX 3</h1>
+				<div class='inner'>
+					<p>Under construction</p>
+				</div>
 			</div>
 		</div>
-		<div class='content'>
-			<h1 class='title'>BOX 2</h1>
-			<div class='inner'>
-				<p>Under construction!</p>
-			</div>
-		</div>
-		<div class='content'>
-			<h1 class='title'>BOX 3</h1>
-			<div class='inner'>
-				<p>Under construction</p>
-			</div>
-		</div>
-	</div>
 
-	<!-- CENTER COLUMN -->
-	<div class='centercol'>
-		<div class='content'>
-			<h1 class='title'>CHANGELOG</h1>
-			<div class='inner'>
-				<div class='icon'><img src='monidle.png' /></div>
+		<!-- CENTER COLUMN -->
+		<div class='centercol'>
+			<div class='content'>
+				<h1 class='title'>CHANGELOG</h1>
+				<div class='inner'>
+					<div class='icon'><img src='monidle.png' /></div>
 
-				<ul>10/10/23 - site overhaul, update astro & node versions</ul>
-				<ul>10/11/23 - css cleanup & layouts</ul>
+					<ul>10/10/23 - site overhaul, update astro & node versions</ul>
+					<ul>10/11/23 - css cleanup & layouts</ul>
+				</div>
+			</div>
+			<div class='content'>
+				<h1 class='title'>BOX 5</h1>
+				<div class='inner'>
+					<p>ooooo sugoi actually working on a website oooo</p>
+					<p>someday the blog will be in working condition...</p>
+				</div>
 			</div>
 		</div>
-		<div class='content'>
-			<h1 class='title'>BOX 5</h1>
-			<div class='inner'>
-				<p>ooooo sugoi actually working on a website oooo</p>
-				<p>someday the blog will be in working condition...</p>
-			</div>
-		</div>
-	</div>
 
-	<!-- RIGHT SIDEBAR -->
-	<div class='sidebarright'>
-		<div class='content'>
-			<h1 class='title'>BOX 6</h1>
-			<div class='inner'>
-				<p>Lorem Ipsum is the most sentence ever.</p>
+		<!-- RIGHT SIDEBAR -->
+		<div class='sidebarright'>
+			<div class='content'>
+				<h1 class='title'>BOX 6</h1>
+				<div class='inner'>
+					<p>Lorem Ipsum is the most sentence ever.</p>
+				</div>
+			</div>
+			<div class='content'>
+				<h1 class='title'>BOX 7</h1>
+				<div class='inner'>
+					<p>FREEEEEBIIIIRRD.</p>
+				</div>
 			</div>
 		</div>
-		<div class='content'>
-			<h1 class='title'>BOX 7</h1>
-			<div class='inner'>
-				<p>FREEEEEBIIIIRRD.</p>
-			</div>
-		</div>
-	</div>
-</ThreeColumn>
+	</main>
+</Default>

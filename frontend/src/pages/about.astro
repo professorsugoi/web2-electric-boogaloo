@@ -1,96 +1,99 @@
 ---
-import ThreeColumn from '../layouts/ThreeColumn.astro';
+import Default from '../layouts/Default.astro';
+import '../styles/three-column.css';
 ---
 
-<ThreeColumn>
-	<!-- LEFT SIDEBAR -->
-	<div class='sidebarleft'>
-		<div class='content'>
-			<h1 class='title'>SUGOI.PNG</h1>
-			<div class='inner'>
-				<p>[img here]</p>
+<Default pageTitle='About'>
+	<main class='three-col-wrapper'>
+		<!-- LEFT SIDEBAR -->
+		<div class='sidebarleft'>
+			<div class='content'>
+				<h1 class='title'>SUGOI.PNG</h1>
+				<div class='inner'>
+					<p>[img here]</p>
+				</div>
+			</div>
+			<div class='content'>
+				<h1 class='title'>STATUS</h1>
+				<div class='inner'>
+					<p>[status here]</p>
+				</div>
+			</div>
+			<div class='content'>
+				<h1 class='title'>A BOX</h1>
+				<div class='inner'>
+					<p>Under construction!</p>
+				</div>
 			</div>
 		</div>
-		<div class='content'>
-			<h1 class='title'>STATUS</h1>
-			<div class='inner'>
-				<p>[status here]</p>
-			</div>
-		</div>
-		<div class='content'>
-			<h1 class='title'>A BOX</h1>
-			<div class='inner'>
-				<p>Under construction!</p>
-			</div>
-		</div>
-	</div>
 
-	<!-- CENTER COLUMN -->
-	<div class='centercol'>
-		<div class='content'>
-			<h1 class='title'>ABOUT</h1>
-			<div class='inner'>
-				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-					dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-					book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-					unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-					recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-				</p>
-				<p>The margin on the right needs tweaking..</p>
+		<!-- CENTER COLUMN -->
+		<div class='centercol'>
+			<div class='content'>
+				<h1 class='title'>ABOUT</h1>
+				<div class='inner'>
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+						standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+						type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+						essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+						passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					</p>
+					<p>The margin on the right needs tweaking..</p>
+				</div>
+			</div>
+			<div class='content'>
+				<h1 class='title'>SKILLS</h1>
+				<div class='inner'>
+					<p>a bunch of bars will go here</p>
+					<ul>
+						<li>
+							text text text text text text text text text text text text text text text text text text text text text text text
+							text text text text text text text text text text text text text text text text text text text text text text text
+							text text text text text text text text
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class='content'>
-			<h1 class='title'>SKILLS</h1>
-			<div class='inner'>
-				<p>a bunch of bars will go here</p>
-				<ul>
-					<li>
-						text text text text text text text text text text text text text text text text text text text text text text text
-						text text text text text text text text text text text text text text text text text text text text text text text
-						text text text text text text text text
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
 
-	<!-- RIGHT SIDEBAR -->
-	<div class='sidebarright'>
-		<div class='content'>
-			<h1 class='title'>BOX 6</h1>
-			<div class='inner'>
-				<div class='icon'><img src='/monidle.png' /></div>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+		<!-- RIGHT SIDEBAR -->
+		<div class='sidebarright'>
+			<div class='content'>
+				<h1 class='title'>BOX 6</h1>
+				<div class='inner'>
+					<div class='icon'><img src='/monidle.png' /></div>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+				</div>
+			</div>
+			<div class='content'>
+				<h1 class='title'>LIKES</h1>
+				<div class='inner'>
+					<ul>
+						<p>
+							<li>list</li>
+							<li>list</li>
+							<li>list</li>
+							<li>list</li>
+							<li>list</li>
+						</p>
+					</ul>
+				</div>
+			</div>
+			<div class='content'>
+				<h1 class='title'>DISLIKES</h1>
+				<div class='inner'>
+					<ul>
+						<p>
+							<li>list</li>
+							<li>list</li>
+							<li>list</li>
+							<li>list</li>
+							<li>list</li>
+						</p>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class='content'>
-			<h1 class='title'>LIKES</h1>
-			<div class='inner'>
-				<ul>
-					<p>
-						<li>list</li>
-						<li>list</li>
-						<li>list</li>
-						<li>list</li>
-						<li>list</li>
-					</p>
-				</ul>
-			</div>
-		</div>
-		<div class='content'>
-			<h1 class='title'>DISLIKES</h1>
-			<div class='inner'>
-				<ul>
-					<p>
-						<li>list</li>
-						<li>list</li>
-						<li>list</li>
-						<li>list</li>
-						<li>list</li>
-					</p>
-				</ul>
-			</div>
-		</div>
-	</div>
-</ThreeColumn>
+	</main>
+</Default>

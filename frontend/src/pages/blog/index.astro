@@ -1,43 +1,46 @@
 ---
 // layout only being used for blog atm
-import TwoColumn from '../../layouts/TwoColumn.astro';
+import Default from '../../layouts/Default.astro';
+import '../../styles/two-column.css';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<TwoColumn>
-	<!-- LEFT SIDEBAR -->
-	<div class='sidebarleft'>
-		<div class='content'>
-			<h1 class='title'>POSTS</h1>
-			<div class='inner'>
-				<section>
-					<ul>
-						{
-							posts.map((post) => (
-								<li>
-									<a href={`/blog/${post.slug}/`}>
-										<span class='title'>{post.data.title}</span>
-										<div class='date'>
-											<FormattedDate date={post.data.pubDate} />
-										</div>
-									</a>
-								</li>
-							))
-						}
-					</ul>
-				</section>
+<Default pageTitle='Blog'>
+	<main class='two-col-wrapper'>
+		<!-- LEFT SIDEBAR -->
+		<div class='sidebarleft'>
+			<div class='content'>
+				<h1 class='title'>POSTS</h1>
+				<div class='inner'>
+					<section>
+						<ul>
+							{
+								posts.map((post) => (
+									<li>
+										<a href={`/blog/${post.slug}/`}>
+											<span class='title'>{post.data.title}</span>
+											<div class='date'>
+												<FormattedDate date={post.data.pubDate} />
+											</div>
+										</a>
+									</li>
+								))
+							}
+						</ul>
+					</section>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- CENTER COLUMN -->
-	<div class='centercol'>
-		<div class='content'>
-			<h1 class='title'>SLUG HERE</h1>
-			<div class='inner'><p>i will eventually figure out how to dynamically load posts here >:/</p></div>
+		<!-- CENTER COLUMN -->
+		<div class='centercol'>
+			<div class='content'>
+				<h1 class='title'>SLUG HERE</h1>
+				<div class='inner'><p>i will eventually figure out how to dynamically load posts here >:/</p></div>
+			</div>
 		</div>
-	</div>
-</TwoColumn>
+	</main>
+</Default>

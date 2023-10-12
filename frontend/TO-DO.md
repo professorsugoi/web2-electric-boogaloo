@@ -55,5 +55,6 @@ commission page
 
 ---
 
-images wont load on neocities for some reason
 adblock detected: need it off to run site properly
+
+add frens websites!!
