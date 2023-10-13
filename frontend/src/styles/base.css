@@ -10,29 +10,6 @@ button {
 	color: inherit;
 }
 
-/* Window layout */
-/* .content-wrapper {
-	display: grid;
-	gap: 10px;
-	grid-template-columns: 20% 1fr 18%;
-}
-
-.sidebarleft {
-	grid-column: 1;
-}
-.centercol {
-	grid-column: 2;
-}
-.sidebarright {
-	grid-column: 3;
-}
-
-.centercol > div,
-.sidebarleft > div,
-.sidebarright > div {
-	margin-bottom: 10px;
-} */
-
 /* Window Styling */
 .content {
 	position: relative;
@@ -58,7 +35,7 @@ button {
 	text-align: center;
 	font-size: inherit;
 	font-weight: inherit;
-	padding: 1px 0;
+	padding: 4px 0;
 	background-size: 3px 2px;
 	margin: 0 0 0 0;
 }

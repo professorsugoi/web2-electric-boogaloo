@@ -1,0 +1,20 @@
+---
+
+---
+
+<div class='inner'>
+	<section>
+		<ul>
+			{
+				posts.map((post) => (
+					<li>
+						<a href={`/blog/${post.slug}/`} data-postid={post.data.postId}>
+							<span class='title'>{post.data.title}</span>
+							<div class='date' />
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</div>
