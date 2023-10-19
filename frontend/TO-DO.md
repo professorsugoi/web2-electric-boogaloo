@@ -1,5 +1,7 @@
 # TO DO
 
+- ⚠️ place better triggers for build in workflow
+
 > Screenshot img for readme
 > Github badges
 > Post things that might be useful for others.  
