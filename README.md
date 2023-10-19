@@ -1,22 +1,57 @@
-# スゴイ
+# TO DO
 
-Sugoi's personal site on Neocities  
-[Frontend To-Do](frontend/TO-DO.md)
+> Screenshot img for readme
+> Github badges
+> Post things that might be useful for others.  
+> Be a silly little guy.
 
----
+## SET UP
 
-## CORE
+- [ ] config cms
+- [ ] site skeleton
+- [ ] site map
+- [ ] config breadcrumbs
+- [ ] config analytics
 
-The meaty stuff
+## MAIN
 
-- [Hosted with Neocities](https://neocities.org/) ヽ( ・ω・)ﾉ
-- [Astro Docs](https://docs.astro.build) - frontend
+- [ ] breadcrumb to show where the user is
+- [ ] projects - art, code, etc
+- [ ] banners - frens, own banner to copy/paste
+- [ ] misc - kaomoji, fun banners
+- [ ] about
+	- [ ] zodiac
+	- [ ] likes/dislikes
+- [ ] blog
+- [ ] changelog component https://keepachangelog.com/en/1.1.0/
 
 ## MISC
 
-Templates and tools used
+- [ ] blog tagging doubles as sections on sitemap (?)
+- [ ] design system
+- [ ] cryptid webring
+- [ ] activity feed
+  - [ ] tweeted, posted commit, etc
+  - [ ] blurry cats feed (ref discord for code)
+- [ ] something for users to interact
+  - [ ] toast this post (cache)
+  - [ ] pet ?
+  - [ ] guestbook/comments or chatbox
+- [ ] layout archive
+- [ ] 'new' flag next to updated pages
+- [ ] custom cursor
+- [ ] is currently online
+- [ ] weather (fake ?)
+- [ ] 'follow on neocities' link
+- [ ] pageviews, # of articles, users here, etc
 
-- [Deploy-Astro-Neocities](https://github.com/professorsugoi/Deploy-Astro-Neocities) - github actions
-- [New Dawn](https://github.com/npjg/classic.css) - css framework
-- [Space BG](https://deep-fold.itch.io/space-background-generator) - by deep-fold on itch.io
-- [Mon Sprite](https://opengameart.org/content/cute-monster-sprite-sheet) - by dogchicken
+---  
+
+## Loose Leaf
+*to be sorted*  
+
+- profile warnings
+- commission page
+- adblock detected: need it off to run site properly
+- svg animations
+
