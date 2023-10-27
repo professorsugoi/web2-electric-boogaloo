@@ -12,8 +12,6 @@ on:
   push:
     branches:
       - 'main'
-    paths:
-      - 'frontend/**'
 
   workflow_dispatch:
     branches:
