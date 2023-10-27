@@ -28,6 +28,11 @@ jobs:
       - name: Checkout the repository code
         uses: actions/checkout@v3
 
+      - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
+      - run: echo "🐧 Running on ${{ runner.os }}!"
+      - run: echo "🔎 Branch :/ ${{ github.ref }}"
+      - run: echo "🔎 Repository:/ ${{ github.repository }}."
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
@@ -35,7 +40,7 @@ jobs:
 
       - name: Get npm cache directory
         id: npm-cache-dir
-        run: echo "::set-output name=dir::$(npm config get cache)"
+        run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
 
       - uses: actions/cache@v3
         id: npm-cache
@@ -44,12 +49,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
-      - run: echo "🍏 Job status :/ ${{ job.status }}."
-      - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
-      - run: echo "🐧 Running on ${{ runner.os }}!"
-      - run: echo "🔎 Branch :/ ${{ github.ref }}"
-      - run: echo "🔎 Repository:/ ${{ github.repository }}."
 
       - name: Install dependencies and build site
         run: |
@@ -63,10 +62,12 @@ jobs:
           cleanup: true
           dist_dir: frontend/dist
 
-      - name: Push changes to GitHub
-        run: |
-          git config user.email ${{ secrets.EMAIL }}
-          git config user.name "professorsugoi"
-          git add .
-          git commit --allow-empty -m "actions: deploy + commit"
-          git push
+      - run: echo "🍏 Job status :/ ${{ job.status }}."
+
+      # - name: Push changes to GitHub
+      #   run: |
+      #     git config user.email
+      #     git config user.name "professorsugoi"
+      #     git add .
+      #     git commit --allow-empty -m "actions: deploy + commit"
+      #     git push
