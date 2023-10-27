@@ -72,5 +72,3 @@ jobs:
           git commit -m "Update build output" || echo "No changes to commit"
           git pull --rebase origin main
           git push origin main
-
-      - run: echo "🎉 Workflow complete!"
