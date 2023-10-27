@@ -1,5 +1,9 @@
 # TO DO
 
+- ⚠️ place better triggers for build in workflow
+
+> Screenshot img for readme
+> Github badges
 > Post things that might be useful for others.  
 > Be a silly little guy.
 
@@ -14,20 +18,22 @@
 ## MAIN
 
 - [ ] breadcrumb to show where the user is
-- [ ] art - projects, useful tools
-- [ ] code - repos, useful tools
-- [ ] misc - kaomoji, outgoing banners
+- [ ] projects - art, code, etc
+- [ ] banners - frens, own banner to copy/paste
+- [ ] misc - kaomoji, fun banners
 - [ ] about
-- [ ] blog/updates
+	- [ ] zodiac
+	- [ ] likes/dislikes
+- [ ] blog
+- [ ] changelog component https://keepachangelog.com/en/1.1.0/
 
 ## MISC
 
-- [ ] blog tagging doubles as sections on sitemap
+- [ ] blog tagging doubles as sections on sitemap (?)
 - [ ] design system
 - [ ] cryptid webring
 - [ ] activity feed
   - [ ] tweeted, posted commit, etc
-  - [ ] status (status.cafe ?)
   - [ ] blurry cats feed (ref discord for code)
 - [ ] something for users to interact
   - [ ] toast this post (cache)
@@ -37,24 +43,17 @@
 - [ ] 'new' flag next to updated pages
 - [ ] custom cursor
 - [ ] is currently online
-- [ ] weather
+- [ ] weather (fake ?)
 - [ ] 'follow on neocities' link
+- [ ] pageviews, # of articles, users here, etc
 
-- https://getbem.com/
+---  
 
-zodiac sign
+## Loose Leaf
+*to be sorted*  
 
-fake world: weather, time, moon phase
+- profile warnings
+- commission page
+- adblock detected: need it off to run site properly
+- svg animations
 
-users on page
-pageviews, articles
-
-profile warnings
-
-commission page
-
----
-
-adblock detected: need it off to run site properly
-
-add frens websites!!
