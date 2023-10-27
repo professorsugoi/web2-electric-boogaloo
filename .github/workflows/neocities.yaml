@@ -14,6 +14,7 @@ on:
       - 'main'
     paths:
       - 'frontend/**'
+
   workflow_dispatch:
     branches:
       - 'main'
@@ -24,37 +25,37 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    outputs:
-      cache-hit: ${{ steps.cache.outputs.cache-hit }}
+
     steps:
       - name: Checkout the repository code
         uses: actions/checkout@v3
-      - run: echo "🍏 Job status :/ ${{ job.status }}."
-
-      - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
-      - run: echo "🐧 Running on ${{ runner.os }}!"
-      - run: echo "🔎 Branch :/ ${{ github.ref }}"
-      - run: echo "🔎 Repository:/ ${{ github.repository }}."
 
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Cache node modules
-        uses: actions/cache@v3
-        id: cache
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - uses: actions/cache@v3
+        id: npm-cache
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.OS }}-node-
+            ${{ runner.os }}-node-
+
+      - run: echo "🍏 Job status :/ ${{ job.status }}."
+      - run: echo "🎉 Job automatically triggered by ${{ github.event_name }} event."
+      - run: echo "🐧 Running on ${{ runner.os }}!"
+      - run: echo "🔎 Branch :/ ${{ github.ref }}"
+      - run: echo "🔎 Repository:/ ${{ github.repository }}."
 
       - name: Install dependencies and build site
         run: |
-          if [ "${{ steps.cache.outputs.cache-hit }}" != "true" ]; then
-            npm ci
-          fi
+          npm install
           npm run build
 
       - name: Deploy to Neocities
@@ -64,11 +65,10 @@ jobs:
           cleanup: true
           dist_dir: frontend/dist
 
-      - name: Commit changes to repo
+      - name: Push changes to GitHub
         run: |
-          git config user.email "emosock@live.com"
+          git config user.email ${{ secrets.EMAIL }}
           git config user.name "professorsugoi"
           git add .
-          git commit -m "Update build output" || echo "No changes to commit"
-          git pull --rebase origin main
-          git push origin main
+          git commit --allow-empty -m "actions: deploy + commit"
+          git push
