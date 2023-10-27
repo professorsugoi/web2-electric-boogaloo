@@ -57,6 +57,13 @@ jobs:
           fi
           npm run build
 
+      - name: Deploy to Neocities
+        uses: bcomnes/deploy-to-neocities@v1
+        with:
+          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+          cleanup: true
+          dist_dir: frontend/dist
+
       - name: Commit changes to repo
         run: |
           git config user.email "emosock@live.com"
@@ -66,17 +73,4 @@ jobs:
           git pull --rebase origin main
           git push origin main
 
-  neocities_deploy:
-    needs: deploy
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Checkout the repository code
-        uses: actions/checkout@v3
-
-      - name: Deploy to Neocities
-        uses: bcomnes/deploy-to-neocities@v1
-        with:
-          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-          cleanup: true
-          dist_dir: frontend/dist
+      - run: echo "🎉 Workflow complete!"
