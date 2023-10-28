@@ -1,6 +1,6 @@
 # TO DO
 
-- ⚠️ place better triggers for build in workflow
+- [x] ⚠️ place better triggers for build in workflow
 
 > Screenshot img for readme
 > Github badges
@@ -9,11 +9,11 @@
 
 ## SET UP
 
-- ~~[ ] config cms~~
-- [ ] site skeleton placeholder
+- [x] ~~config cms~~ not needed @ this point in development
+- [ ] site skeleton
 - [ ] site map
 - [ ] config breadcrumbs
-- [ ] config analytics
+- [ ] config analytics (no google no cookies no trackers)
 
 ## MAIN
 
@@ -23,7 +23,7 @@
 - [ ] about
 	- [ ] zodiac
 	- [ ] likes/dislikes
-- [ ] blog
+- [x] blog
 - [ ] changelog component https://keepachangelog.com/en/1.1.0/
 
 ## MISC
@@ -55,4 +55,7 @@
 - commission page
 - adblock detected: need it off to run site properly
 - svg animations
+
+---
+
 
