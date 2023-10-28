@@ -9,15 +9,14 @@
 
 ## SET UP
 
-- [ ] config cms
-- [ ] site skeleton
+- ~~[ ] config cms~~
+- [ ] site skeleton placeholder
 - [ ] site map
 - [ ] config breadcrumbs
 - [ ] config analytics
 
 ## MAIN
 
-- [ ] breadcrumb to show where the user is
 - [ ] projects - art, code, etc
 - [ ] banners - frens, own banner to copy/paste
 - [ ] misc - kaomoji, fun banners
@@ -29,14 +28,14 @@
 
 ## MISC
 
-- [ ] blog tagging doubles as sections on sitemap (?)
+- [ ] blog tagging doubles as sections on sitemap (ie. changelog)
 - [ ] design system
 - [ ] cryptid webring
 - [ ] activity feed
   - [ ] tweeted, posted commit, etc
   - [ ] blurry cats feed (ref discord for code)
-- [ ] something for users to interact
-  - [ ] toast this post (cache)
+- [ ] something for users to interact w/
+  - [ ] medium-like clap button
   - [ ] pet ?
   - [ ] guestbook/comments or chatbox
 - [ ] layout archive
