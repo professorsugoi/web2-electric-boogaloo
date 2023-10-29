@@ -1,7 +1,7 @@
 # スゴイ
 
 Sugoi's personal site on Neocities  
-[Frontend To-Do](frontend/TO-DO.md)
+[Frontend To-Do](TO-DO.md)
 
 ---
 
