@@ -17,13 +17,12 @@
 
 ## MAIN
 
-- [ ] breadcrumb to show where the user is
 - [ ] projects - art, code, etc
 - [ ] banners - frens, own banner to copy/paste
 - [ ] misc - kaomoji, fun banners
 - [ ] about
-	- [ ] zodiac
-	- [ ] likes/dislikes
+  - [ ] zodiac
+  - [ ] likes/dislikes
 - [ ] blog
 - [ ] changelog component https://keepachangelog.com/en/1.1.0/
 
@@ -47,13 +46,13 @@
 - [ ] 'follow on neocities' link
 - [ ] pageviews, # of articles, users here, etc
 
----  
+---
 
 ## Loose Leaf
-*to be sorted*  
+
+_to be sorted_
 
 - profile warnings
 - commission page
 - adblock detected: need it off to run site properly
 - svg animations
-
