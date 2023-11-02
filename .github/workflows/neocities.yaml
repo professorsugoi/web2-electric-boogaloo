@@ -19,6 +19,7 @@ on:
     inputs:
       logLevel:
         description: 'Run workflow'
+        required: true
 
 jobs:
   deploy:
