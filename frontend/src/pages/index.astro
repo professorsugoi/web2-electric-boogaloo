@@ -1,6 +1,9 @@
 ---
 import Default from '../layouts/Default.astro';
 import '../styles/three-column.css';
+import ChangelogPost from '../components/Changelog.astro';
+
+const boxImg5 = 'https://d2d29byvjhs8jq.cloudfront.net/images/NOISE.png';
 ---
 
 <Default pageTitle='Home'>
@@ -8,16 +11,22 @@ import '../styles/three-column.css';
 		<!-- LEFT SIDEBAR -->
 		<div class='sidebarleft'>
 			<div class='content'>
-				<h1 class='title'>BOX 1</h1>
+				<h1 class='title'>ATTENTION</h1>
 				<div class='inner'>
-					<p>Under construction!</p>
-					<button class='command_button'>Button</button>
+					<p>Please consider whitelisting profsugoi.neocities.org</p>
+					<p>
+						I will be using a handful of scripts when I've developed the site more, and they tend to break when fighting
+						adblockers.
+					</p>
+					<p><b>We do not use trackers or cookies!</b></p>
+					<p>Site analytics are provided by <a href='https://withcabin.com/privacy/profsugoi.neocities.org'>Cabin</a> :3</p>
 				</div>
 			</div>
 			<div class='content'>
 				<h1 class='title'>BOX 2</h1>
 				<div class='inner'>
 					<p>Under construction!</p>
+					<button class='command_button'>Button</button>
 				</div>
 			</div>
 			<div class='content'>
@@ -33,17 +42,15 @@ import '../styles/three-column.css';
 			<div class='content'>
 				<h1 class='title'>CHANGELOG</h1>
 				<div class='inner'>
+					<ChangelogPost />
 					<div class='icon'><img src='monidle.png' /></div>
-					<ul>10/13/23 - spent several hours hitting rock against keyboard. good work today</ul>
-					<ul>10/11/23 - css cleanup & layouts</ul>
-					<ul>10/10/23 - site overhaul, update astro & node versions</ul>
 				</div>
 			</div>
 			<div class='content'>
 				<h1 class='title'>BOX 5</h1>
 				<div class='inner'>
-					<p>ooooo sugoi actually working on a website oooo</p>
-					<p>someday the blog will be in working condition...</p>
+					<p>image here to test styling</p>
+					<img src={boxImg5} alt='artwork of a demon silhouette' />
 				</div>
 			</div>
 		</div>
@@ -53,7 +60,7 @@ import '../styles/three-column.css';
 			<div class='content'>
 				<h1 class='title'>BOX 6</h1>
 				<div class='inner'>
-					<p>Lorem Ipsum is the most sentence ever.</p>
+					<p>do i even need three columns...</p>
 				</div>
 			</div>
 			<div class='content'>

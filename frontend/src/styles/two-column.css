@@ -24,7 +24,7 @@ ul li * {
 	text-decoration: none;
 	transition: 0.2s ease;
 }
-ul li img {
+ul li img Image {
 	margin-bottom: 0.5rem;
 	border-radius: 12px;
 }

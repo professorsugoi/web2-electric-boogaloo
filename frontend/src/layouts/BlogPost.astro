@@ -3,6 +3,7 @@ import '../styles/two-column.css';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -101,6 +102,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			</div>
 		</div>
 	</main>
+	<Footer />
 
 
 </html>
