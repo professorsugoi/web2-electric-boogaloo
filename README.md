@@ -1,7 +1,7 @@
 # スゴイ
 
 Sugoi's personal site on Neocities  
-[Frontend To-Do](frontend/TO-DO.md)
+[Frontend To-Do](TO-DO.md)
 
 ---
 
@@ -20,3 +20,4 @@ Templates and tools used
 - [New Dawn](https://github.com/npjg/classic.css) - css framework
 - [Space BG](https://deep-fold.itch.io/space-background-generator) - by deep-fold on itch.io
 - [Mon Sprite](https://opengameart.org/content/cute-monster-sprite-sheet) - by dogchicken
+- Fonts: [ChicagoFLF](https://github.com/npjg/classic.css/tree/master/fonts) & [JetBrainsMono](https://www.jetbrains.com/lp/mono/)

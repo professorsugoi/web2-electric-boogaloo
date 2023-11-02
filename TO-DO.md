@@ -1,33 +1,36 @@
 # TO DO
 
-- [x] ⚠️ place better triggers for build in workflow
-
-> Screenshot img for readme
-> Github badges
 > Post things that might be useful for others.  
 > Be a silly little guy.
 
 ## SET UP
 
-- [x] ~~config cms~~ not needed @ this point in development
-- [ ] site skeleton
-- [ ] site map
+- [x] place better triggers for build in workflow
+- [x] site map
 - [ ] config breadcrumbs
-- [ ] config analytics (no google no cookies no trackers)
+- [x] config analytics (no cookies/trackers)
+- [x] config off-site image storage (WE DID IT REDDIT)
+- [ ] ~~config cms~~
 
 ## MAIN
 
+- [ ] site skeleton/loading placeholder
 - [ ] projects - art, code, etc
 - [ ] banners - frens, own banner to copy/paste
 - [ ] misc - kaomoji, fun banners
 - [ ] about
-	- [ ] zodiac
-	- [ ] likes/dislikes
+  - [ ] zodiac
+  - [ ] likes/dislikes
 - [x] blog
 - [ ] changelog component https://keepachangelog.com/en/1.1.0/
 
 ## MISC
 
+- [ ] style blog header & padding
+- [ ] style scrollbar
+- [ ] github badges
+- [x] screenshot img for readme
+- [ ] blog index shares state w/ blog post [astro docs](https://docs.astro.build/en/recipes/sharing-state/)
 - [ ] blog tagging doubles as sections on sitemap (ie. changelog)
 - [ ] design system
 - [ ] cryptid webring
@@ -46,10 +49,11 @@
 - [ ] 'follow on neocities' link
 - [ ] pageviews, # of articles, users here, etc
 
----  
+---
 
 ## Loose Leaf
-*to be sorted*  
+
+_to be sorted_
 
 - profile warnings
 - commission page
@@ -57,5 +61,3 @@
 - svg animations
 
 ---
-
-
