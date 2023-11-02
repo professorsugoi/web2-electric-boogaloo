@@ -2,9 +2,9 @@
 import { marked } from 'marked';
 import { GITHUB_REPO_NAME } from '../consts';
 
-const slug = 'changelog.md';
+const slug = 'changelog';
 const response = await fetch(
-	`https://raw.githubusercontent.com/professorsugoi/${GITHUB_REPO_NAME}/main/frontend/src/content/blog/${slug}`
+	`https://raw.githubusercontent.com/professorsugoi/${GITHUB_REPO_NAME}/main/frontend/src/content/blog/${slug}.md`
 );
 const markdown = await response.text();
 
@@ -23,9 +23,5 @@ const content = marked.parse(truncatedMarkdown);
 
 <article>
 	<div set:html={content} />
-	<span style='margin-left: 2em;'
-		>...<a href={`https://raw.githubusercontent.com/professorsugoi/${GITHUB_REPO_NAME}/main/frontend/src/content/blog/${slug}`}
-			>Read More</a
-		></span
-	>
+	<a href={`/blog/${slug}`}><button class='command_button'>Read More</button></a>
 </article>

@@ -1,7 +1,7 @@
 .three-col-wrapper {
 	display: grid;
 	gap: 15px;
-	grid-template-columns: 20% 1fr 18%;
+	grid-template-columns: 20% 1fr 20%;
 }
 
 .sidebarleft {
