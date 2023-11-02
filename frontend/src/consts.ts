@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = 'CRYPTIDCAFE';
 export const SITE_DESCRIPTION = 'ヽ(・∀・)ﾉ';
+export const GITHUB_REPO_NAME = 'web2-electric-boogaloo';

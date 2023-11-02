@@ -16,6 +16,7 @@
 		"@sakun/system.css": "^0.1.11",
 		"astro": "^3.2.3",
 		"astro-breadcrumbs": "^1.8.0",
+		"marked": "^9.1.5",
 		"shiki": "^0.14.5"
 	}
 }

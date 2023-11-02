@@ -8,6 +8,7 @@ heroImage: ''
 **[11/01/23]**  
 **Added**  
 -- domain name & email!  
+-- completely unnecessary changelog component  
 -- forgotten footer to blog page..  
 -- sitemap gen for bots  
 -- sitemap for humans :3  

@@ -1,42 +1,31 @@
 ---
+import { marked } from 'marked';
+import { GITHUB_REPO_NAME } from '../consts';
 
+const slug = 'changelog.md';
+const response = await fetch(
+	`https://raw.githubusercontent.com/professorsugoi/${GITHUB_REPO_NAME}/main/frontend/src/content/blog/${slug}`
+);
+const markdown = await response.text();
+
+function truncate(content, startLine = 0, maxLines = 7) {
+	const lines = content.split('\n');
+	const trunicatedLines = lines.slice(startLine, startLine + maxLines);
+	if (trunicatedLines.length <= maxLines) return trunicatedLines.join('\n');
+	return lines.join('\n');
+}
+
+const truncatedMarkdown = truncate(markdown, 7);
+const content = marked.parse(truncatedMarkdown);
+// i did try using the <Content /> component, but it wouldn't truncate >:(
+// so this is the workaround
 ---
 
-<section>
-	<b>11/01/23</b><br />
-	<b>Added</b>
-	<ul>
-		<li>domain name &amp; email!</li>
-		<li>forgotten footer to blog page.</li>
-		<li>sitemap gen for bots</li>
-		<li>sitemap for humans :3</li>
-		<li>404 page</li>
-		<li>font fallbacks</li>
-	</ul>
-
-	<b>Changed</b>
-	<ul>
-		<li>fontface for body text to jetbrains mono</li>
-		<li>image caching method</li>
-		<li>codeblock theme to dracula</li>
-		<li>bold text styling to chicago fontface</li>
-	</ul>
-	<b>Security</b>
-	<ul>
-		<li>restricted access to img bucket</li>
-	</ul>
-
-	<b>10/13/23</b><br />
-	<b>Added</b>
-	<ul>
-		<li>privacy-friendly analytics</li>
-		<li>sidebar index on blog page</li>
-		<li>spent hours hitting rock against keyboard. good work.</li>
-	</ul>
-
-	<b>10/10/23</b><br />
-	<b>Changed</b>
-	<ul>
-		<li>site overhaul. clean up css and simplify layouts.</li>
-	</ul>
-</section>
+<article>
+	<div set:html={content} />
+	<span style='margin-left: 2em;'
+		>...<a href={`https://raw.githubusercontent.com/professorsugoi/${GITHUB_REPO_NAME}/main/frontend/src/content/blog/${slug}`}
+			>Read More</a
+		></span
+	>
+</article>
