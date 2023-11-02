@@ -3,7 +3,7 @@
 Sugoi's personal site on Neocities  
 [Frontend To-Do](TO-DO.md)
 
----
+![image](screenshot.png)
 
 ## CORE
 
