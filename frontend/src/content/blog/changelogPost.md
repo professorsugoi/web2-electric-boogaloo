@@ -1,5 +1,5 @@
 ---
-title: 'Changelog'
+title: 'Site Changelog'
 description: 'state of the site'
 pubDate: 'Jan 02 1000'
 heroImage: ''
