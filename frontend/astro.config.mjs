@@ -5,6 +5,18 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	site: 'https://cryptidcafe.net',
 	integrations: [mdx(), sitemap()],
+	image: {
+		domains: ['*.neocities.org'],
+	},
+	markdown: {
+		shikiConfig: {
+			// https://github.com/shikijs/shiki/blob/main/docs/themes.md
+			theme: 'dracula',
+			// Add custom languages
+			langs: [],
+			wrap: true,
+		},
+	},
 });

@@ -15,6 +15,7 @@
 		"@astrojs/sitemap": "^3.0.1",
 		"@sakun/system.css": "^0.1.11",
 		"astro": "^3.2.3",
-		"astro-breadcrumbs": "^1.8.0"
+		"astro-breadcrumbs": "^1.8.0",
+		"shiki": "^0.14.5"
 	}
 }

@@ -21,10 +21,10 @@
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
 }
+
 @font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
-	font-weight: 400;
+	font-family: 'ChicagoFLF';
+	src: url('/fonts/ChicagoFLF.ttf') format('truetype');
 	font-style: normal;
 	font-display: swap;
 }
@@ -32,6 +32,19 @@
 	font-family: 'ChicagoFLF';
 	src: url('/fonts/ChicagoFLF.ttf') format('truetype'); /* Safari, Android, iOS */
 }
+@font-face {
+	font-family: 'JetBrainsMono-Regular';
+	src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'JetBrainsMono-Italic';
+	src: url('/fonts/JetBrainsMono-Italic.woff2') format('woff2');
+	font-style: italic;
+	font-display: swap;
+}
+
 html,
 body {
 	/* -moz-user-select: none;
@@ -40,15 +53,14 @@ body {
 	background-repeat: repeat;
 	margin: 0;
 	height: 100%;
-	font-family: 'ChicagoFLF', 'Times New Roman', 'Georgia', serif;
-	font-size: 12px;
-	font-weight: normal;
+	font-family: 'JetBrainsMono-Regular', 'Consolas', monospace;
+	font-size: 13px;
 	overflow: auto;
 	text-align: left;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
-	line-height: 1.7;
+	line-height: 1.3;
 }
 main {
 	width: 1200px;
@@ -65,6 +77,7 @@ h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
 	line-height: 1.2;
+	font-family: 'ChicagoFLF', 'Lucidia Console', sans-serif;
 }
 h1 {
 	font-size: 3.052em;
@@ -83,7 +96,8 @@ h5 {
 }
 strong,
 b {
-	font-weight: 700;
+	font-family: 'ChicagoFLF', 'Lucidia Console', sans-serif;
+	font-weight: 400;
 }
 a {
 	color: var(--accent);
@@ -100,7 +114,6 @@ a:hover {
 p {
 	margin: 1em 0 1em 0;
 	padding: 0 1em 0 2em;
-	font-size: 12px;
 }
 .prose p {
 	margin-bottom: 2em;
