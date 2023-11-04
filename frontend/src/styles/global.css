@@ -12,8 +12,8 @@
 }
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	--accent: #5049b9;
+	--accent-dark: #234e77;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -99,11 +99,13 @@ b {
 	font-family: 'ChicagoFLF', 'Lucidia Console', sans-serif;
 	font-weight: 400;
 }
-a {
+a[href]:not([class]) {
 	color: var(--accent);
+	text-decoration: none;
 }
-a:hover {
-	color: var(--accent);
+a[href]:not([class]):hover {
+	color: var(--accent-dark);
+	text-decoration: none;
 }
 :focus {
 	outline: none;
@@ -112,8 +114,7 @@ a:hover {
 	border: 0;
 }
 p {
-	margin: 1em 0 1em 0;
-	padding: 0 1em 0 2em;
+	margin: 1em 0;
 }
 .prose p {
 	margin-bottom: 2em;
@@ -149,9 +150,8 @@ pre > code {
 }
 blockquote {
 	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
+	padding: 0 0 0 1.5em;
 	margin: 0px;
-	font-size: 1.333em;
 }
 hr {
 	border: none;

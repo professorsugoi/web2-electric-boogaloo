@@ -5,6 +5,13 @@ pubDate: 'Jan 02 1000'
 heroImage: ''
 ---
 
+**[11/03/23]**  
+**Added**  
+-personal fedi mini-feed
+-styling for default links  
+**Changed**  
+-margin & padding css to be more consistent across the site
+
 **[11/01/23]**  
 **Added**  
 -domain name & email!  

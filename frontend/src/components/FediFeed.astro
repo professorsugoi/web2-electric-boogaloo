@@ -1,0 +1,80 @@
+<div id='posts'></div>
+
+<script>
+	async function fetchAndCachePosts() {
+		let response = await fetch('https://outerheaven.club/users/sugoi/feed.atom');
+		let data = await response.text();
+		let parser = new DOMParser();
+		let xmlDoc = parser.parseFromString(data, 'text/xml');
+
+		let entries = xmlDoc.querySelectorAll('entry');
+		let validPosts = [];
+
+		for (let entry of entries) {
+			let title = entry.querySelector('title').textContent;
+			let content = entry.querySelector('content').textContent;
+			let link = entry.querySelector('link[rel="alternate"]').getAttribute('href');
+			let publishedDate = entry.querySelector('published').textContent;
+			let hasImage = entry.querySelector('link[rel="enclosure"][type^="image/"]');
+			let isMention = title.startsWith('@');
+			let summaryContent = entry.querySelector('summary') ? entry.querySelector('summary').textContent.trim() : '';
+
+			if (!hasImage && !isMention && !summaryContent) {
+				validPosts.push({ content, publishedDate, link });
+			}
+
+			if (validPosts.length === 3) {
+				break;
+			}
+		}
+
+		// Store the fetched posts into localStorage
+		localStorage.setItem('cachedPosts', JSON.stringify(validPosts));
+
+		displayPostsOnPage(validPosts);
+	}
+
+	function displayPostsOnPage(posts) {
+		const postsDiv = document.getElementById('posts');
+		posts.forEach((post) => {
+			const postElement = document.createElement('div');
+			postElement.className = 'post';
+			postElement.style.margin = '1em';
+			postElement.style.padding = '0.5em 1em';
+			postElement.style.backgroundColor = '#ffffff67';
+			postElement.style.borderLeft = '4px solid #ffffff';
+
+			const contentElement = document.createElement('div');
+			contentElement.innerHTML = post.content;
+			postElement.appendChild(contentElement);
+
+			const dateLink = document.createElement('a');
+			dateLink.href = post.link;
+			dateLink.innerHTML = new Date(post.publishedDate).toDateString();
+			postElement.appendChild(dateLink);
+			dateLink.style.fontSize = '0.8em';
+			dateLink.style.fontWeight = 'bold';
+			dateLink.style.color = '#234e77';
+
+			postsDiv.appendChild(postElement);
+		});
+	}
+
+	window.addEventListener('DOMContentLoaded', async () => {
+		try {
+			// Check if we have posts cached in localStorage
+			const cachedPosts = localStorage.getItem('cachedPosts');
+
+			if (cachedPosts) {
+				// Parse and display cached posts
+				const parsedPosts = JSON.parse(cachedPosts);
+				displayPostsOnPage(parsedPosts);
+			} else {
+				// Fetch and cache posts if not cached
+				await fetchAndCachePosts();
+			}
+		} catch (error) {
+			console.error('Failed to fetch or cache the feed:', error);
+		}
+	});
+</script>
