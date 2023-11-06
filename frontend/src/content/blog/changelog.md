@@ -5,12 +5,16 @@ pubDate: 'Jan 02 1000'
 heroImage: ''
 ---
 
-**[11/03/23]**  
+**[11/05/23]**  
 **Added**  
--personal fedi mini-feed
+-personal fedi mini-feed w/ local caching  
 -styling for default links  
+-changelog clarity (see bottom of this post)  
+-badges section  
 **Changed**  
--margin & padding css to be more consistent across the site
+-margin & padding css to be more consistent across the site  
+-body primary font source from self-hosting to bunny cdn  
+-dam/cdn provider from aws to cloudinary
 
 **[11/01/23]**  
 **Added**  
@@ -38,3 +42,18 @@ heroImage: ''
 **[10/10/23]**  
 **Changed**  
 -site overhaul. clean up css and simplify layouts.
+
+---
+
+#### What is listed in the changelog?
+
+- structural updates
+  - backend service modifications
+  - page/section additions or removals
+  - code changes impacting performance
+
+#### What **isn't** listed in the changelog?
+
+- content updates
+  - new blog posts
+  - new artwork

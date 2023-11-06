@@ -3,8 +3,9 @@ import Default from '../layouts/Default.astro';
 import '../styles/three-column.css';
 import FediFeed from '../components/FediFeed.astro';
 import ChangelogPost from '../components/ChangelogPost.astro';
+import Badges from '../components/Badges.astro';
 
-const boxImg5 = 'https://d2d29byvjhs8jq.cloudfront.net/images/NOISE.png';
+const boxImg5 = 'https://res.cloudinary.com/ccafe/image/upload/t_art-opt/red_devil_internet.png';
 ---
 
 <Default pageTitle='Home'>
@@ -20,7 +21,7 @@ const boxImg5 = 'https://d2d29byvjhs8jq.cloudfront.net/images/NOISE.png';
 			<div class='content'>
 				<h1 class='title'>BOX 2</h1>
 				<div class='inner'>
-					<p>Under construction!</p>
+					<p>text text text</p>
 				</div>
 			</div>
 			<div class='content'>
@@ -43,11 +44,8 @@ const boxImg5 = 'https://d2d29byvjhs8jq.cloudfront.net/images/NOISE.png';
 				<h1 class='title'>BOX 5</h1>
 				<div class='inner'>
 					<p>image here to test styling</p>
-					<img
-						src={boxImg5}
-						style='width: 300px; display: block; margin-left: auto; margin-right: auto;'
-						alt='artwork of a demon silhouette'
-					/>
+					<img src={boxImg5} style='display: block; margin-left: auto; margin-right: auto;' alt='artwork of a demon silhouette' />
+					<p></p>
 				</div>
 			</div>
 			<div class='content'>
@@ -75,9 +73,9 @@ const boxImg5 = 'https://d2d29byvjhs8jq.cloudfront.net/images/NOISE.png';
 				</div>
 			</div>
 			<div class='content'>
-				<h1 class='title'>BOX 7</h1>
+				<h1 class='title'>BADGES</h1>
 				<div class='inner'>
-					<p>FREEEEEBIIIIRRD.</p>
+					<p><Badges /></p>
 				</div>
 			</div>
 		</div>

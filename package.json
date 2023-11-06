@@ -1,5 +1,6 @@
 {
 	"name": "web2electricboogaloo",
+	"type": "module",
 	"version": "1.0.0",
 	"description": "Sugoi's personal site on Neocities",
 	"workspaces": [
