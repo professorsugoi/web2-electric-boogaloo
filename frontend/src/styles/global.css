@@ -104,7 +104,7 @@ a[href]:not([class]):hover {
 	text-decoration: none;
 }
 :focus {
-	outline: none;
+	outline-color: transparent;
 }
 ::-moz-focus-inner {
 	border: 0;
