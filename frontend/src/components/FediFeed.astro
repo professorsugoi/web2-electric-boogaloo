@@ -28,8 +28,12 @@
 			}
 		}
 
-		// Store the fetched posts into localStorage
-		localStorage.setItem('cachedPosts', JSON.stringify(validPosts));
+		// Store the fetched posts and the current timestamp
+		const cacheData = {
+			posts: validPosts,
+			timestamp: new Date().getTime(),
+		};
+		localStorage.setItem('cachedPosts', JSON.stringify(cacheData));
 
 		displayPostsOnPage(validPosts);
 	}
@@ -62,15 +66,22 @@
 
 	window.addEventListener('DOMContentLoaded', async () => {
 		try {
-			// Check if we have posts cached in localStorage
-			const cachedPosts = localStorage.getItem('cachedPosts');
+			const cachedData = localStorage.getItem('cachedPosts');
+			const cacheExpiry = 3600000; // Cache expiry time in milliseconds, e.g., 1 hour
 
-			if (cachedPosts) {
-				// Parse and display cached posts
-				const parsedPosts = JSON.parse(cachedPosts);
-				displayPostsOnPage(parsedPosts);
+			if (cachedData) {
+				const { posts, timestamp } = JSON.parse(cachedData);
+				const currentTime = new Date().getTime();
+
+				// Check if the cache is still valid
+				if (currentTime - timestamp < cacheExpiry) {
+					displayPostsOnPage(posts);
+				} else {
+					// Cache is expired, fetch new data
+					await fetchAndCachePosts();
+				}
 			} else {
-				// Fetch and cache posts if not cached
+				// No cache found, fetch new data
 				await fetchAndCachePosts();
 			}
 		} catch (error) {

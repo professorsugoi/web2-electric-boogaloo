@@ -16,17 +16,18 @@
 
 - [ ] site skeleton/loading placeholder
 - [ ] projects - art, code, etc
-- [ ] banners - frens, own banner to copy/paste
-- [ ] misc - kaomoji, fun banners
+- [ ] misc
+  - [ ] kaomoji
+  - [ ] web badges
+  - [ ] site buttons (frens + own button to copy/paste)
 - [ ] about
   - [ ] zodiac
   - [ ] likes/dislikes
 - [x] blog
-- [x] changelog component https://keepachangelog.com/en/1.1.0/
+- [x] changelog
 
 ## MISC
 
-- [ ] quicker way to upload + pick images from s3 bucket
 - [ ] style blog header & padding
 - [ ] style scrollbar
 - [ ] github badges
@@ -46,7 +47,7 @@
 - [ ] custom cursor
 - [ ] is currently online
 - [ ] weather (fake ?)
-- [ ] 'follow on neocities' link
+- [x] 'follow on neocities' link
 - [ ] pageviews, # of articles, users here, etc
 
 ---
@@ -55,7 +56,7 @@
 
 _to be sorted_
 
-- profile warnings
+- profile warnings ?
 - commission page
 - adblock detected: need it off to run site properly
 - svg animations

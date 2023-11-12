@@ -6,7 +6,6 @@ dist/
 .vscode
 .codesandbox
 snippets/
-internal_tools/
 
 # dependencies
 node_modules/

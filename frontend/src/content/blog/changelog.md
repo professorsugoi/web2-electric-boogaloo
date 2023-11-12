@@ -5,6 +5,10 @@ pubDate: 'Jan 02 1000'
 heroImage: ''
 ---
 
+**[11/11/23]**  
+**Fixed**  
+-stale cache for mini-feed
+
 **[11/05/23]**  
 **Added**  
 -personal fedi mini-feed w/ local caching  
@@ -57,3 +61,12 @@ heroImage: ''
 - content updates
   - new blog posts
   - new artwork
+
+#### Key
+
+- added for new features.
+- changed for changes in existing functionality
+- deprecated for soon-to-be removed features
+- removed for now removed features
+- fixed for any bug fixes
+- security in case of vulnerabilities
