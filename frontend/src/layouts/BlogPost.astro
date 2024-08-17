@@ -7,6 +7,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import BlogAside from '../components/BlogAside.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -54,22 +55,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			<div class='content'>
 				<h1 class='title'>POSTS</h1>
 				<div class='inner'>
-					<section>
-						<ul>
-							{
-								posts.map((post) => (
-									<li>
-										<a href={`/blog/${post.slug}/`}>
-											<span class='title'>{post.data.title}</span>
-											<div class='date'>
-												<FormattedDate date={post.data.pubDate} />
-											</div>
-										</a>
-									</li>
-								))
-							}
-						</ul>
-					</section>
+					<BlogAside />
 				</div>
 			</div>
 		</div>

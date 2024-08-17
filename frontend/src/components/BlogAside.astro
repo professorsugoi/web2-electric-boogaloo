@@ -1,20 +1,43 @@
 ---
+import { getCollection } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
 
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+interface Props {
+  currentSlug?: string;
+  limit?: number;
+}
+
+const { currentSlug, limit = 5 } = Astro.props;
+
+const filteredPosts = currentSlug
+  ? sortedPosts.filter(post => post.slug !== currentSlug).slice(0, limit)
+  : sortedPosts.slice(0, limit);
+
+const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<div class='inner'>
-	<section>
-		<ul>
-			{
-				posts.map((post) => (
-					<li>
-						<a href={`/blog/${post.slug}/`} data-postid={post.data.postId}>
-							<span class='title'>{post.data.title}</span>
-							<div class='date' />
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</section>
-</div>
+<aside>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}/`}>
+              <span class='title'>{post.data.title}</span>
+              <div class='date'>
+                <FormattedDate date={post.data.pubDate} />
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+</aside>
+
+<style>
+  .active {
+    font-weight: bold;
+  }
+</style>
