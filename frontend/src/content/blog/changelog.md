@@ -4,6 +4,9 @@ description: 'state of the site'
 pubDate: 'Jan 02 1000'
 heroImage: ''
 ---
+**[11/15/25]**  
+**Housekeeping**  
+-updated astro to 5.15.7
 
 **[11/11/23]**  
 **Fixed**  

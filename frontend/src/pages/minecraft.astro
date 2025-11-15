@@ -1,0 +1,225 @@
+---
+import Default from "../layouts/Default.astro";
+import "../styles/three-column.css";
+---
+
+<style>
+  .gradient {
+    font-weight: bold;
+    background: linear-gradient(to right, #ff00cc, #3333ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+</style>
+
+<Default pageTitle="Minecraft">
+  <main class="three-col-wrapper">
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebarleft">
+      <div class="content">
+        <h1 class="title">SERVER</h1>
+        <div class="inner">
+          <p><span class="gradient"><b>jeanzone.minecraft.horse</b></span></p>
+          <p><b>Version:</b> 1.21.10</p>
+          <p><b>Client:</b> Java</p>
+          <p>
+            <a href="http://jeanzone.minecraft.horse:25667/"
+              ><b>Server Map</b></a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="content">
+        <h1 class="title">JEANZONE??</h1>
+        <div class="inner">
+          <p>
+            "The Jeanzone" is a silly joke referencing a friend's
+            join-notification sound for discord.
+          </p>
+          <p><em>"YOU ARE NOW ENTERING... THE JEAN ZONE."</em></p>
+          <p>
+            I suck at naming things, and our friend just happened to join the vc
+            as I was creating the original server. It's just stuck since then.
+            Thanks, Jean :)
+          </p>
+        </div>
+      </div>
+      <!-- <div class="content">
+        <h1 class="title">A BOX</h1>
+        <div class="inner">
+          <p>Under construction!</p>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- CENTER COLUMN -->
+    <div class="centercol">
+      <div class="content">
+        <h1 class="title">ABOUT</h1>
+        <div class="inner">
+          <p>
+            This page is for referencing various plugins for the minecraft
+            server I host.
+          </p>
+          <p>
+            It is whitelisted for friends only (and because bots scrape for
+            public servers), so just shoot me a message on discord to be added!
+          </p>
+        </div>
+      </div>
+      <div class="content">
+        <h1 class="title">PLUGINS</h1>
+        <div class="inner">
+          <p>
+            These are largely <i>quality of life</i> plugins. They're meant to make
+            life easier without altering the gameplay too much.<br />
+            The lists below are non-exhaustive, but I tried including everything
+            relevant to players. Enjoy!
+          </p>
+          <p><hr /></p>
+          <h4>Commands</h4>
+          <ul>
+            <li>
+              <b>Nether Portal Coords</b> – <code>/portal</code> to get coordinates
+              for linking.
+            </li>
+
+            <li>
+              <b>Nickname</b> – <code>/nick set &lt;text here&gt;</code> – change
+              your name.
+            </li>
+
+            <li>
+              <b>ItemLore</b> - Supports color codes and <a
+                href="https://docs.papermc.io/adventure/minimessage/format/"
+                >MiniMessage</a
+              >.
+              <ul>
+                <li>
+                  <code>/rename &lt;text here&gt;</code> – Give an item a custom
+                  name.
+                </li>
+                <li>
+                  <code>/setlore &lt;line number&gt;</code> – Add lore to your items.
+                </li>
+                <li>
+                  <code>/irr help</code> – Displays commands and their usage.
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <p><hr /></p>
+          <ul>
+            <h4>Tweaks</h4>
+            <li>
+              <b>Fast Leaf Decay</b> – Leaves will decay much faster.
+            </li>
+            <li>
+              <b>Double Shulker Shells</b> – Shulkers will drop 2 shells minimum.
+            </li>
+            <li>
+              <b>Wandering Trader</b> – Has mini blocks and hermit heads for sale!
+            </li>
+            <li>
+              <b>Sandstone Dyeing</b> – Red dye and sand makes red sandstone.
+            </li>
+            <li>
+              <b>Back To Blocks</b> – Turns stairs, and slabs back to blocks.
+            </li>
+            <li>
+              <b>Universal Dyeing</b> – Allows you to dye any dyeable block to another
+              colour.
+            </li>
+            <li>
+              <b>Weakened Bedrock </b> – Throw a lingering potion of weakness to
+              turn bedrock to cobblestone.
+            </li>
+            <li>
+              <b>Silk Touch Amethyst </b> – Budding Amethyst can be mined with a
+              Silk Touch.
+            </li>
+            <li>
+              <b>No Block Damage</b> – Block damage caused by Creepers, Withers,
+              Ender Dragon, and Fireballs is disabled.
+            </li>
+            <li>
+              <b>Always Drop</b> - Ender chests and glass blocks will always drop
+              without the need for silk touch.
+            </li>
+            <li><b>Cauldron Potions</b> - texthere</li>
+            <li>
+              <b>Custom Nether Portals</b> - Crying obsidian and portals with different
+              dimensions can be lit.
+            </li>
+            <li>
+              <b>More Mob Heads</b> - More mobs have a chance to drop a head on death.
+            </li>
+            <li><b>Player Head Drops</b> - Kill your friends :D</li>
+          </ul>
+          <p><hr /></p>
+          <ul>
+            <h4>Craftables</h4>
+            <li><b>Leather</b></li> – Place rotten flesh in furnace.
+            <li><b>Black Dye</b></li> – Craft coal or charcoal.
+            <li><b>Gilded Blackstone</b></li> – Craft 1 gold block, and 8 blackstone.
+            <li><b>Cauldron Concrete</b></li> - While holding concrete powder, right-click
+            a cauldron filled with water to turn into concrete.
+            <li><b>Cauldron Mud</b></li> - While holding dirt, right-click a cauldron
+            filled with water to turn into mud.
+          </ul>
+          <p><hr /></p>
+          <ul>
+            <h4>Unpackables</h4>
+            <li>
+              <b>Packed Ice </b> – Turn 1 blue ice into 9 packed ice.
+            </li>
+            <li><b>Ice</b> – Turn 1 packed ice into 9 ice.</li>
+            <li><b>String </b> – Turn 1 wool into 4 string.</li>
+            <li>
+              <b>Honeycomb</b> – Turn 1 honeycomb block into 9 honeycomb.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sidebarright">
+      <div class="content">
+        <h1 class="title">SERVER CHANGELOG</h1>
+        <div class="inner">
+          <div class="icon"><img src="/monidle.png" /></div>
+          <p>[11/15/25] - web page created!</p>
+        </div>
+      </div>
+      <div class="content">
+        <h1 class="title">SPECS</h1>
+        <div class="inner">
+          <ul>
+            <p>
+              <li>Host: Lilypad.gg</li>
+              <li>4GB RAM</li>
+              <li>7950X Processor</li>
+              <li>2 Threads</li>
+              <li>60GB NVMe Storage</li>
+            </p>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="content"
+        style="background-color: transparent; border: none; box-shadow: none; padding-top: 3px;"
+      >
+        <p>
+          <img
+            src="https://file.garden/ZXJgLsYwORXn2d89/nyamcat.png"
+            alt="Bootleg Nyancat"
+            style="width: 90%; height: auto; margin-left: 8px;"
+          />
+        </p>
+      </div>
+    </div>
+  </main>
+</Default>
