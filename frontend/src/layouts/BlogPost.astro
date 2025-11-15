@@ -1,115 +1,108 @@
 ---
-import '../styles/two-column.css';
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE } from '../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-<<<<<<< HEAD
-import Remark42Embed from '../components/remark42-embed.svelte';
-=======
-import BlogAside from '../components/BlogAside.astro';
->>>>>>> 616253a45e3ce250898c1b05099e818048b49faf
+import "../styles/two-column.css";
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import BlogAside from "../components/BlogAside.astro";
 
-type Props = CollectionEntry<'blog'>['data'] & { comments };
+type Props = CollectionEntry<"blog">["data"];
 
-const posts = (await getCollection('blog'))
-	.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
-	.map((post) => ({
-		...post,
-		comments: true, // or based on some condition
-	}));
-const { title, description, pubDate, updatedDate, heroImage, comments } = Astro.props;
+const posts = (await getCollection("blog"))
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .map((post) => ({
+    ...post,
+    comments: true, // or based on some condition
+  }));
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <!-- this will remain a hot mess until further notice -->
-<html lang='en'>
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.hero-image {
-				width: auto;
-				margin: 2em 2em 1em 2em;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      .hero-image {
+        width: auto;
+        margin: 2em 2em 1em 2em;
+      }
+      .hero-image img {
+        display: block;
+        margin: 0 auto;
+      }
+      .prose {
+        width: 720px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 1em;
+        color: rgb(var(--gray-dark));
+      }
+      .title h1 {
+        margin: 0 0 0.5em 0;
+      }
+      .date {
+        margin-bottom: 0.5em;
+        color: rgb(var(--gray));
+      }
+      .last-updated-on {
+        font-style: italic;
+      }
+    </style>
+  </head>
 
-	<Header title={SITE_TITLE} />
-	<main class='two-col-wrapper'>
-		<!-- LEFT SIDEBAR -->
-		<div class='sidebarleft'>
-			<div class='content'>
-				<h1 class='title'>POSTS</h1>
-				<div class='inner'>
-					<BlogAside />
-				</div>
-			</div>
-		</div>
+  <Header title={SITE_TITLE} />
+  <main class="two-col-wrapper">
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebarleft">
+      <div class="content">
+        <h1 class="title">POSTS</h1>
+        <div class="inner">
+          <BlogAside />
+        </div>
+      </div>
+    </div>
 
-		<!-- CENTER COLUMN -->
-		<div class='centercol'>
-			<div class='content'>
-				<h1 class='title'><FormattedDate date={pubDate} /></h1>
-				<div class='inner'>
-					<!-- top bit -->
-					<div class='hero-image'>
-						{heroImage && <img width={720} height={500} src={heroImage} alt='' />}
-					</div>
-					<div class='prose'>
-						<div class='title'>
-							<div class='date'>
-								{
-									updatedDate && (
-										<div class='last-updated-on'>
-											Last updated on <FormattedDate date={updatedDate} />
-										</div>
-									)
-								}
-							</div>
-							<h1>{title}</h1>
-							<hr />
-						</div>
-						<!-- ------------ -->
+    <!-- CENTER COLUMN -->
+    <div class="centercol">
+      <div class="content">
+        <h1 class="title"><FormattedDate date={pubDate} /></h1>
+        <div class="inner">
+          <!-- top bit -->
+          <div class="hero-image">
+            {
+              heroImage && (
+                <img width={720} height={500} src={heroImage} alt="" />
+              )
+            }
+          </div>
+          <div class="prose">
+            <div class="title">
+              <div class="date">
+                {
+                  updatedDate && (
+                    <div class="last-updated-on">
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </div>
+                  )
+                }
+              </div>
+              <h1>{title}</h1>
+              <hr />
+            </div>
+            <!-- ------------ -->
 
-						<!-- post content -->
-						<slot />
-						<!-- ------------ -->
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class='centercol content inner'>
-			box
-			<!-- comment box -->
-			{comments && <Remark42Embed client:visible />}
-			<!-- post content -->
-		</div>
-	</main>
-	<Footer />
+            <!-- post content -->
+            <slot />
+            <!-- ------------ -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
 
 
 </html>
