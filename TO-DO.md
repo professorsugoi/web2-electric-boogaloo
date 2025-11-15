@@ -18,7 +18,7 @@
 - [ ] projects - art, code, etc
 - [ ] misc
   - [ ] kaomoji
-  - [ ] web badges
+  - [x] web badges
   - [ ] site buttons (frens + own button to copy/paste)
 - [ ] about
   - [ ] zodiac
@@ -28,7 +28,7 @@
 
 ## MISC
 
-- [ ] style blog header & padding
+- [x] style blog header & padding
 - [ ] style scrollbar
 - [ ] github badges
 - [x] screenshot img for readme
