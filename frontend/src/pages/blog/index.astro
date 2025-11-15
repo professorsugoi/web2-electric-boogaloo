@@ -2,10 +2,16 @@
 // layout only being used for blog atm
 import Default from '../../layouts/Default.astro';
 import '../../styles/two-column.css';
+import BlogAside from '../../components/BlogAside.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+// fetch all posts and sort by most recent
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a,b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// get most recent post
+const mostRecentPost = sortedPosts[0];
 ---
 
 <Default pageTitle='Blog'>
@@ -15,22 +21,7 @@ const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueO
 			<div class='content'>
 				<h1 class='title'>POSTS</h1>
 				<div class='inner'>
-					<section>
-						<ul>
-							{
-								posts.map((post) => (
-									<li>
-										<a href={`/blog/${post.slug}/`}>
-											<span class='title'>{post.data.title}</span>
-											<div class='date'>
-												<FormattedDate date={post.data.pubDate} />
-											</div>
-										</a>
-									</li>
-								))
-							}
-						</ul>
-					</section>
+					<BlogAside />
 				</div>
 			</div>
 		</div>
@@ -38,8 +29,19 @@ const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueO
 		<!-- CENTER COLUMN -->
 		<div class='centercol'>
 			<div class='content'>
-				<h1 class='title'>SLUG HERE</h1>
-				<div class='inner'><p>i will eventually figure out how to dynamically load posts here >:/</p></div>
+				<h1 class='title'>Latest Post</h1>
+				<div class='inner'>
+					{mostRecentPost ? (
+						<article>
+							<h2>{mostRecentPost.data.title}</h2>
+							<FormattedDate date={mostRecentPost.data.pubDate} />
+							<p>{mostRecentPost.data.description}</p>
+							<a href={`/blog/${mostRecentPost.slug}/`}>Read more</a>
+						</article>
+						) : (
+							<p>No posts found.</p>
+					)}
+				</div>
 			</div>
 		</div>
 	</main>
